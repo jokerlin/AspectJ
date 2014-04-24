@@ -1,0 +1,288 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+	x:Class="aspectJ.codeWindow"
+	x:Name="Window"
+	Title="codeWindow"
+	Width="658" Height="496" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}">
+
+	<Window.Resources>
+		<Style x:Key="ButtonStyle3" TargetType="{x:Type Button}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<ControlTemplate.Resources>
+							<Storyboard x:Key="Storyboard1">
+								<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse">
+									<EasingColorKeyFrame KeyTime="0" Value="#FF878787"/>
+									<EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF878787"/>
+								</ColorAnimationUsingKeyFrames>
+								<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ellipse">
+									<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+									<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+								</DoubleAnimationUsingKeyFrames>
+							</Storyboard>
+						</ControlTemplate.Resources>
+						<Grid x:Name="grid" Cursor="Arrow">
+							<Ellipse x:Name="ellipse" Fill="Black" Opacity="0" Cursor="Arrow"/>
+							<ContentPresenter x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Stretch" Content="x" Margin="0,-5.01,0,0" Cursor="Arrow"/>
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsFocused" Value="True"/>
+							<Trigger Property="IsDefaulted" Value="True"/>
+							<Trigger Property="IsMouseOver" Value="True" SourceName="grid">
+								<Trigger.ExitActions>
+									<StopStoryboard BeginStoryboardName="Storyboard1_BeginStoryboard"/>
+								</Trigger.ExitActions>
+								<Trigger.EnterActions>
+									<BeginStoryboard x:Name="Storyboard1_BeginStoryboard" Storyboard="{StaticResource Storyboard1}"/>
+								</Trigger.EnterActions>
+								<Setter Property="Cursor" TargetName="ellipse" Value="Arrow"/>
+							</Trigger>
+							<Trigger Property="IsPressed" Value="True"/>
+							<Trigger Property="IsEnabled" Value="False"/>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<LinearGradientBrush x:Key="TextBoxBorder" EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+			<GradientStop Color="#ABADB3" Offset="0.05"/>
+			<GradientStop Color="#E2E3EA" Offset="0.07"/>
+			<GradientStop Color="#E3E9EF" Offset="1"/>
+		</LinearGradientBrush>
+		<Style x:Key="myScrollBarStyle" TargetType="{x:Type ScrollBar}">
+			<Setter Property="Stylus.IsFlicksEnabled" Value="false"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ScrollBar}">
+						<ControlTemplate.Resources>
+							<Storyboard x:Key="decreaseOn">
+								<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="DecreaseRepeat">
+									<EasingColorKeyFrame KeyTime="0" Value="#FF878787"/>
+									<EasingColorKeyFrame KeyTime="0:0:0.3" Value="White"/>
+								</ColorAnimationUsingKeyFrames>
+							</Storyboard>
+							<Storyboard x:Key="IncreaseOn">
+								<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="IncreaseRepeat">
+									<EasingColorKeyFrame KeyTime="0" Value="#FF878787"/>
+									<EasingColorKeyFrame KeyTime="0:0:0.3" Value="White"/>
+								</ColorAnimationUsingKeyFrames>
+							</Storyboard>
+						</ControlTemplate.Resources>
+						<Grid x:Name="GridRoot" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
+							<Grid.RowDefinitions>
+								<RowDefinition MaxHeight="18"/>
+								<RowDefinition Height="0.00001*"/>
+								<RowDefinition MaxHeight="18"/>
+							</Grid.RowDefinitions>
+						
+							<RepeatButton x:Name="DecreaseRepeat" Style="{DynamicResource RepeatButtonStyle1}" Command="ScrollBar.LineUpCommand" Foreground="#FF878787" FontFamily="Verdana" FontSize="9.333" Margin="-4.75,0" RenderTransformOrigin="0.5,0.5">
+								<RepeatButton.RenderTransform>
+									<TransformGroup>
+										<ScaleTransform/>
+										<SkewTransform/>
+										<RotateTransform/>
+										<TranslateTransform/>
+									</TransformGroup>
+								</RepeatButton.RenderTransform>
+								<Grid>
+									<Path x:Name="DecreaseArrow" Stroke="{TemplateBinding Foreground}" StrokeThickness="1" Data="M 0 4 L 8 4 L 4 0 Z"/>
+								</Grid>
+							</RepeatButton>
+						
+						<!-- Track 是一种特殊的布局容器，可调整用于在其一侧执行跳转滚动的 thumb 和 repeat button 的大小 -->
+							<Track Grid.Row="1" x:Name="PART_Track" Orientation="Vertical" IsDirectionReversed="true">
+								<Track.Thumb>
+									<Thumb x:Name="thumb" Style="{DynamicResource ThumbStyle1}"/>
+								</Track.Thumb>
+								<Track.IncreaseRepeatButton>
+									<RepeatButton x:Name="PageUp" Style="{DynamicResource SimpleScrollRepeatButtonStyle}" Command="ScrollBar.PageDownCommand" Visibility="Collapsed"/>
+								</Track.IncreaseRepeatButton>
+								<Track.DecreaseRepeatButton>
+									<RepeatButton x:Name="PageDown" Style="{DynamicResource SimpleScrollRepeatButtonStyle}" Command="ScrollBar.PageUpCommand" Visibility="Collapsed"/>
+								</Track.DecreaseRepeatButton>
+							</Track>
+						
+							<RepeatButton Grid.Row="2" x:Name="IncreaseRepeat" Style="{DynamicResource downRepeatButtonStyle}" Command="ScrollBar.LineDownCommand" Foreground="#FF878787" FontSize="9.333" FontFamily="Verdana" Margin="-4.75,0" RenderTransformOrigin="0.5,0.5">
+								<RepeatButton.RenderTransform>
+									<TransformGroup>
+										<ScaleTransform ScaleX="1"/>
+										<SkewTransform/>
+										<RotateTransform/>
+										<TranslateTransform/>
+									</TransformGroup>
+								</RepeatButton.RenderTransform>
+								<Grid>
+									<Path x:Name="IncreaseArrow" Stroke="{TemplateBinding Foreground}" StrokeThickness="1" Data="M 0 0 L 4 4 L 8 0 Z"/>
+								</Grid>
+							</RepeatButton>
+						</Grid>
+					
+					<!-- 它对 ScrollBar 使用一个模板，并将其旋转为“水平”
+					它还会更改命令，使其执行“向左”和“向右”命令，而不是执行“向上”和“向下”命令 -->
+						<ControlTemplate.Triggers>
+							<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="IncreaseRepeat">
+								<BeginStoryboard x:Name="IncreaseOn_BeginStoryboard" Storyboard="{StaticResource IncreaseOn}"/>
+							</EventTrigger>
+							<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="IncreaseRepeat">
+								<StopStoryboard BeginStoryboardName="IncreaseOn_BeginStoryboard"/>
+							</EventTrigger>
+							<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="DecreaseRepeat">
+								<BeginStoryboard x:Name="decreaseOn_BeginStoryboard" Storyboard="{StaticResource decreaseOn}"/>
+							</EventTrigger>
+							<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="DecreaseRepeat">
+								<StopStoryboard BeginStoryboardName="decreaseOn_BeginStoryboard"/>
+							</EventTrigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<!-- Simple ScrollViewer 
+	ScrollViewer 是 Grid 控件，该控件包含 ContentPresenter 以及 Horizontal 和 Vertical ScrollBar 
+	它可供 ListBox、MenuItem、ComboBox 和 TreeView 使用 -->
+		<Style x:Key="ScrollViewerStyle2" TargetType="{x:Type ScrollViewer}" BasedOn="{x:Null}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ScrollViewer}">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+							<ScrollContentPresenter Grid.Column="0" Grid.Row="0" Margin="0,0,4,0" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" CanContentScroll="{TemplateBinding CanContentScroll}"/>
+						
+						<!-- ScrollBars 的可见性通过控件的实现来控制 -->
+							<ScrollBar Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Grid.Column="0" Grid.Row="1" x:Name="PART_HorizontalScrollBar" Style="{DynamicResource SimpleScrollBar}" Orientation="Horizontal" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}" Minimum="0" Maximum="{TemplateBinding ScrollableWidth}" />
+							<ScrollBar Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Grid.Column="1" Grid.Row="0" x:Name="PART_VerticalScrollBar" Style="{DynamicResource myScrollBarStyle}" Orientation="Vertical" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}" Minimum="0" Maximum="{TemplateBinding ScrollableHeight}" />
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="{x:Type TextBoxBase}" BasedOn="{x:Null}" TargetType="{x:Type TextBoxBase}">
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+			<Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"/>
+			<Setter Property="BorderThickness" Value="1"/>
+			<Setter Property="Padding" Value="1"/>
+			<Setter Property="AllowDrop" Value="true"/>
+			<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+			<Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+			<Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type TextBoxBase}">
+						<ControlTemplate.Resources>
+							<Storyboard x:Key="OnLoaded1"/>
+						</ControlTemplate.Resources>
+						<Microsoft_Windows_Themes:ListBoxChrome x:Name="Bd" BorderThickness="{TemplateBinding BorderThickness}"  SnapsToDevicePixels="true" BorderBrush="{x:Null}">
+							<ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Style="{DynamicResource ScrollViewerStyle2}"/>
+						</Microsoft_Windows_Themes:ListBoxChrome>
+						<ControlTemplate.Triggers>
+							<Trigger Property="IsEnabled" Value="false">
+								<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+								<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="{x:Type Hyperlink}" TargetType="{x:Type Hyperlink}">
+			<Setter Property="Foreground" Value="Blue"/>
+			<Setter Property="TextDecorations" Value="Underline"/>
+			<Style.Triggers>
+				<Trigger Property="IsMouseOver" Value="true">
+					<Setter Property="Foreground" Value="Red"/>
+				</Trigger>
+				<Trigger Property="IsEnabled" Value="false">
+					<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+				</Trigger>
+				<Trigger Property="IsEnabled" Value="true">
+					<Setter Property="Cursor" Value="Hand"/>
+				</Trigger>
+			</Style.Triggers>
+		</Style>
+		<Style x:Key="RichTextBoxStyle1" TargetType="{x:Type RichTextBox}">
+			<Style.Resources>
+				<Style x:Key="{x:Type FlowDocument}" TargetType="{x:Type FlowDocument}">
+					<Setter Property="OverridesDefaultStyle" Value="true"/>
+				</Style>
+				<Style x:Key="{x:Type Hyperlink}" BasedOn="{StaticResource {x:Type Hyperlink}}" TargetType="{x:Type Hyperlink}">
+					<Style.Triggers>
+						<Trigger Property="IsMouseOver" Value="true">
+							<Setter Property="Foreground" Value="Blue"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+						</Trigger>
+					</Style.Triggers>
+				</Style>
+			</Style.Resources>
+			<Setter Property="MinWidth" Value="10"/>
+			<Style.BasedOn>
+				<StaticResource ResourceKey="{x:Type TextBoxBase}"/>
+			</Style.BasedOn>
+		</Style>
+	
+		<Style x:Key="elementButtonStyle" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+			<Setter Property="FocusVisualStyle" Value="{DynamicResource SimpleButtonFocusVisual}"/>
+			<Setter Property="Background" Value="{DynamicResource NormalBrush}"/>
+			<Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+					
+						<!--每种状态都基于模板中的 Border 来设置画笔 -->
+					<!-- 我们将 Grid 用作根，原因在于这便于添加更多的元素来自定义按钮 -->
+						<Grid x:Name="Grid">
+							<Border x:Name="Border" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}"/>
+						
+							<!-- Content Presenter 是控件放置文本内容等项之处 -->
+						<!-- 通过利用绑定，无需编辑模板即可将控件参数化 -->
+							<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+						</Grid>
+					
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Window.Resources>
+
+	<Grid x:Name="LayoutRoot">
+		<Rectangle Fill="#FF181818" Margin="8" RadiusY="6" RadiusX="6" Opacity="0.945"/>
+		<RichTextBox x:Name="richTextBox" Margin="8,42.157,8,39.665" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFEDEDED"  >
+			<FlowDocument>
+				<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
+				<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
+			</FlowDocument>
+		</RichTextBox>
+		<Button x:Name="acceptButton" Content="确定" HorizontalAlignment="Left" Height="22.665" Margin="162.667,0,0,13" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" Width="79.333" Click="acceptButton_Click"/>
+		<Button x:Name="cancelButton" Content="取消" HorizontalAlignment="Right" Height="22.665" Margin="0,0,169,13" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" Width="79.333" Click="cancelButton_Click"/>
+		<Label Content="切面代码插入" HorizontalAlignment="Left" Height="25.657" Margin="8,12.5,0,0" VerticalAlignment="Top" Width="87" Foreground="Gray"/>
+	</Grid>
+</Window>

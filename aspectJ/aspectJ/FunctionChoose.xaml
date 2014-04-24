@@ -1,0 +1,34 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="aspectJ.FunctionChoose"
+	x:Name="Window"
+	Title="FunctionChoose"
+	Width="640" Height="480" Background="{x:Null}">
+
+	<Grid x:Name="LayoutRoot">
+		<Grid Margin="109,121.5,86,76">
+			<Rectangle Fill="#FF444444" RadiusY="10.5" RadiusX="10.5"/>
+			<ListBox HorizontalAlignment="Left" Margin="11,8,0,8" Style="{DynamicResource SimpleListBox}" Width="160" Background="#FF333333" BorderBrush="#FF595959">
+				<ListBoxItem Content="ListBoxItem" Style="{DynamicResource SimpleListBoxItem}" FontSize="21.333"/>
+				<ListBoxItem Content="ListBoxItem" Style="{DynamicResource SimpleListBoxItem}" FontSize="18.667"/>
+				<ListBoxItem Content="ListBoxItem" Style="{DynamicResource SimpleListBoxItem}" FontSize="14.667"/>
+			</ListBox>
+			<ListBox Margin="0,8,10,8" Style="{DynamicResource SimpleListBox}" HorizontalAlignment="Right" Width="165" Background="#FF333333" BorderBrush="#FF595959">
+				<ListBoxItem Content="ListBoxItem" Style="{DynamicResource SimpleListBoxItem}"/>
+				<ListBoxItem Content="ListBoxItem" Style="{DynamicResource SimpleListBoxItem}"/>
+				<ListBoxItem Content="ListBoxItem" Style="{DynamicResource SimpleListBoxItem}"/>
+			</ListBox>
+			<Button Content="Add To&gt;&gt;" Height="31" Margin="175,41.5,179,0" VerticalAlignment="Top"/>
+			<Button Content="Remove" Margin="175,109.5,179,104"/>
+			<ListBox Margin="193,12.5,84,68" Style="{DynamicResource ListBoxStyle1}">
+				<ListBoxItem Content="ListBoxItem"/>
+				<ListBoxItem Content="ListBoxItem"/>
+				<ListBoxItem Content="ListBoxItem" Style="{DynamicResource ListBoxItemStyle1}"/>
+				<ListBoxItem Content="ListBoxItem"/>
+				<ListBoxItem Content="ListBoxItem"/>
+			</ListBox>
+		</Grid>
+	</Grid>
+</Window>

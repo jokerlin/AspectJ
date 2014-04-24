@@ -1,0 +1,187 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Class="aspectJ.MainWindow"
+	x:Name="Window"
+	Title="MainWindow"
+	Width="640" Height="480" Background="#FF0C0C0C">
+	<Window.Resources>
+		<Style x:Key="myScrollBarStyle" TargetType="{x:Type ScrollBar}">
+			<Setter Property="Stylus.IsFlicksEnabled" Value="false"/>
+			<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ScrollBar}">
+						<ControlTemplate.Resources>
+							<Storyboard x:Key="decreaseOn">
+								<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="DecreaseRepeat">
+									<EasingColorKeyFrame KeyTime="0" Value="#FF878787"/>
+									<EasingColorKeyFrame KeyTime="0:0:0.3" Value="White"/>
+								</ColorAnimationUsingKeyFrames>
+							</Storyboard>
+							<Storyboard x:Key="IncreaseOn">
+								<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="IncreaseRepeat">
+									<EasingColorKeyFrame KeyTime="0" Value="#FF878787"/>
+									<EasingColorKeyFrame KeyTime="0:0:0.3" Value="White"/>
+								</ColorAnimationUsingKeyFrames>
+							</Storyboard>
+						</ControlTemplate.Resources>
+						<Grid x:Name="GridRoot" Width="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}">
+							<Grid.RowDefinitions>
+								<RowDefinition MaxHeight="18"/>
+								<RowDefinition Height="0.00001*"/>
+								<RowDefinition MaxHeight="18"/>
+							</Grid.RowDefinitions>
+						
+							<RepeatButton x:Name="DecreaseRepeat" Style="{DynamicResource RepeatButtonStyle1}" Command="ScrollBar.LineUpCommand" Foreground="#FF878787" FontFamily="Verdana" FontSize="9.333" Margin="-4.75,0" RenderTransformOrigin="0.5,0.5">
+								<RepeatButton.RenderTransform>
+									<TransformGroup>
+										<ScaleTransform ScaleX="0.65" ScaleY="0.65"/>
+										<SkewTransform/>
+										<RotateTransform/>
+										<TranslateTransform/>
+									</TransformGroup>
+								</RepeatButton.RenderTransform>
+								<Grid>
+									<Path x:Name="DecreaseArrow" Stroke="{TemplateBinding Foreground}" StrokeThickness="1" Data="M 0 4 L 8 4 L 4 0 Z"/>
+								</Grid>
+							</RepeatButton>
+						
+						<!-- Track 是一种特殊的布局容器，可调整用于在其一侧执行跳转滚动的 thumb 和 repeat button 的大小 -->
+							<Track Grid.Row="1" x:Name="PART_Track" Orientation="Vertical" IsDirectionReversed="true">
+								<Track.Thumb>
+									<Thumb x:Name="thumb" Style="{DynamicResource ThumbStyle1}"/>
+								</Track.Thumb>
+								<Track.IncreaseRepeatButton>
+									<RepeatButton x:Name="PageUp" Style="{DynamicResource SimpleScrollRepeatButtonStyle}" Command="ScrollBar.PageDownCommand" Visibility="Collapsed"/>
+								</Track.IncreaseRepeatButton>
+								<Track.DecreaseRepeatButton>
+									<RepeatButton x:Name="PageDown" Style="{DynamicResource SimpleScrollRepeatButtonStyle}" Command="ScrollBar.PageUpCommand" Visibility="Collapsed"/>
+								</Track.DecreaseRepeatButton>
+							</Track>
+						
+							<RepeatButton Grid.Row="2" x:Name="IncreaseRepeat" Style="{DynamicResource downRepeatButtonStyle}" Command="ScrollBar.LineDownCommand" Foreground="#FF878787" FontSize="9.333" FontFamily="Verdana" Margin="-4.75,0" RenderTransformOrigin="0.5,0.5">
+								<RepeatButton.RenderTransform>
+									<TransformGroup>
+										<ScaleTransform ScaleX="0.65" ScaleY="0.65"/>
+										<SkewTransform/>
+										<RotateTransform/>
+										<TranslateTransform/>
+									</TransformGroup>
+								</RepeatButton.RenderTransform>
+								<Grid>
+									<Path x:Name="IncreaseArrow" Stroke="{TemplateBinding Foreground}" StrokeThickness="1" Data="M 0 0 L 4 4 L 8 0 Z"/>
+								</Grid>
+							</RepeatButton>
+						</Grid>
+					
+					<!-- 它对 ScrollBar 使用一个模板，并将其旋转为“水平”
+					它还会更改命令，使其执行“向左”和“向右”命令，而不是执行“向上”和“向下”命令 -->
+						<ControlTemplate.Triggers>
+							<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="IncreaseRepeat">
+								<BeginStoryboard x:Name="IncreaseOn_BeginStoryboard" Storyboard="{StaticResource IncreaseOn}"/>
+							</EventTrigger>
+							<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="IncreaseRepeat">
+								<StopStoryboard BeginStoryboardName="IncreaseOn_BeginStoryboard"/>
+							</EventTrigger>
+							<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="DecreaseRepeat">
+								<BeginStoryboard x:Name="decreaseOn_BeginStoryboard" Storyboard="{StaticResource decreaseOn}"/>
+							</EventTrigger>
+							<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="DecreaseRepeat">
+								<StopStoryboard BeginStoryboardName="decreaseOn_BeginStoryboard"/>
+							</EventTrigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style x:Key="ScrollViewerStyle2" TargetType="{x:Type ScrollViewer}" BasedOn="{x:Null}">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type ScrollViewer}">
+						<Grid Background="{TemplateBinding Background}">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+							<ScrollContentPresenter Grid.Column="0" Grid.Row="0" Margin="0,0,4,0" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" CanContentScroll="{TemplateBinding CanContentScroll}"/>
+						
+						<!-- ScrollBars 的可见性通过控件的实现来控制 -->
+							<ScrollBar Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" Grid.Column="0" Grid.Row="1" x:Name="PART_HorizontalScrollBar" Style="{DynamicResource SimpleScrollBar}" Orientation="Horizontal" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}" Minimum="0" Maximum="{TemplateBinding ScrollableWidth}" />
+							<ScrollBar Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" Grid.Column="1" Grid.Row="0" x:Name="PART_VerticalScrollBar" Style="{DynamicResource myScrollBarStyle}" Orientation="Vertical" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}" Minimum="0" Maximum="{TemplateBinding ScrollableHeight}" />
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Window.Resources>
+
+	<Grid x:Name="LayoutRoot">
+		<ScrollBar Margin="74.667,40,0,0" Style="{DynamicResource myScrollBarStyle}" Width="30.333" HorizontalAlignment="Left" Height="106.333" VerticalAlignment="Top"/>
+		<ScrollViewer Margin="121.5,18.667,0,0" Style="{DynamicResource ScrollViewerStyle2}" HorizontalAlignment="Left" Height="138.666" VerticalAlignment="Top" Width="146.167">
+			<TextBlock x:Name="textBlock" Height="163.5" TextWrapping="Wrap" Width="122.916" Foreground="White"><Run Language="zh-cn" Text="ddv"/></TextBlock>
+		</ScrollViewer>
+		<ListBox Height="155" Margin="200,0,298,64" VerticalAlignment="Bottom" SelectionMode="Multiple">
+			<ListBoxItem Content="drawPicture" Style="{DynamicResource SimpleListBoxItem}"/>
+			<ListBoxItem Content="drawRectange" Style="{DynamicResource SimpleListBoxItem}"/>
+			<ListBoxItem Content="drawEllipse" Style="{DynamicResource SimpleListBoxItem}"/>
+			<ListBoxItem Content="choosePen" Style="{DynamicResource SimpleListBoxItem}"/>
+			<ListBoxItem Content="chooseBrush" Style="{DynamicResource SimpleListBoxItem}"/>
+		</ListBox>
+		<Grid x:Name="rightKeyGrid" Margin="0,116,64,119" HorizontalAlignment="Right" Width="176">
+			<Rectangle Fill="#FF181818" Margin="8,8,10.5,24.5" RadiusY="4" RadiusX="4" Opacity="0.945"/>
+			<Button x:Name="button" Margin="8,15.455,10.5,0" Style="{DynamicResource listButton}" FontSize="14.667" Foreground="Gray" Height="50" VerticalAlignment="Top" Content="仅显示该分支" RenderTransformOrigin="0.5,0.5">
+				<Button.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Button.RenderTransform>
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFEEEEEE" Offset="0"/>
+						<GradientStop Color="#FF878787" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+			<Button x:Name="button2" Content="仅显示该函数分支" Margin="8,70.455,10.5,86.545" Style="{DynamicResource listButton}" FontSize="14.667" Foreground="#FF878787" RenderTransformOrigin="0.5,0.5">
+				<Button.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Button.RenderTransform>
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFEEEEEE" Offset="0"/>
+						<GradientStop Color="#FF878787" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+			<Button x:Name="button3" Content="属性" Margin="8,0,10.5,32.5" Style="{DynamicResource listButton}" FontSize="14.667" Foreground="#FF878787" Height="50" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5">
+				<Button.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Button.RenderTransform>
+				<Button.Background>
+					<LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+						<GradientStop Color="#FFEEEEEE" Offset="0"/>
+						<GradientStop Color="#FF878787" Offset="1"/>
+					</LinearGradientBrush>
+				</Button.Background>
+			</Button>
+		</Grid>
+	</Grid>
+</Window>

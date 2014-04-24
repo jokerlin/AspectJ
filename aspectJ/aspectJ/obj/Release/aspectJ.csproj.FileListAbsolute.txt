@@ -1,0 +1,18 @@
+D:\wpf\pro_from_blend\aspectJ\aspectJ\bin\Release\aspectJ.exe
+D:\wpf\pro_from_blend\aspectJ\aspectJ\bin\Release\aspectJ.pdb
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\elementBox.baml
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\MainWindow.baml
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\ResourceDictionary.baml
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\Simple Styles.baml
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\App.baml
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\elementBox.g.cs
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\MainWindow.g.cs
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\treeGraph.g.cs
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\App.g.cs
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\aspectJ_MarkupCompile.cache
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\aspectJ_MarkupCompile.lref
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\treeGraph.baml
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\aspectJ.g.resources
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\aspectJ.exe
+D:\wpf\pro_from_blend\aspectJ\aspectJ\obj\Release\aspectJ.pdb

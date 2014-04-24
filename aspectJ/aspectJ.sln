@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aspectJ", "aspectJ\aspectJ.csproj", "{16A7A85F-543E-4143-9061-A2BE30225F2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16A7A85F-543E-4143-9061-A2BE30225F2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16A7A85F-543E-4143-9061-A2BE30225F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16A7A85F-543E-4143-9061-A2BE30225F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16A7A85F-543E-4143-9061-A2BE30225F2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
