@@ -73,7 +73,7 @@
 			</Rectangle.RenderTransform>
 		</Rectangle>
 		<Rectangle Height="54.167" Stroke="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="194.708" Fill="#FF2980B9"/>
-		<Grid Height="41.5" Margin="8,3.335,8,0" VerticalAlignment="Top" d:IsLocked="True">
+		<Grid Height="41.5" Margin="8,3.335,8,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
             	<ColumnDefinition Width="148*"/>
             	<ColumnDefinition Width="335*"/>

@@ -39,8 +39,10 @@ namespace aspectJ
 
         private void functionDropButton_Click(object sender, RoutedEventArgs e)
         {
+            
+            GetCalls getCalls = new GetCalls();
+            getCalls.Run();
             treeGraph tg = new treeGraph();
-      
             tg.Show();
             this.Close(); 
         }

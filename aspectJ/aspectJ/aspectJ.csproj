@@ -68,6 +68,7 @@
     <Compile Include="FunctionChoose.xaml.cs">
       <DependentUpon>FunctionChoose.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GetCalls.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="InsertCodeCommand.cs" />
     <Compile Include="IUndoCommand.cs" />

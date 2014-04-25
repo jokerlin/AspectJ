@@ -115,7 +115,6 @@ D:\wpf\aspectj\aspectj\aspectJ\aspectJ\bin\Debug\ja\System.Windows.Interactivity
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\bin\Debug\ko\System.Windows.Interactivity.resources.dll
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.csprojResolveAssemblyReference.cache
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\codeWindow.baml
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\elementBox.baml
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\FunctionChoose.baml
