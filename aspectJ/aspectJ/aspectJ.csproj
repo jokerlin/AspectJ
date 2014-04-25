@@ -60,12 +60,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AnalyseFuction.cs" />
+    <Compile Include="CodeEditor.cs" />
+    <Compile Include="CodeManager.cs" />
     <Compile Include="codeWindow.xaml.cs">
       <DependentUpon>codeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="FunctionChoose.xaml.cs">
       <DependentUpon>FunctionChoose.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ICommand.cs" />
+    <Compile Include="InsertCodeCommand.cs" />
+    <Compile Include="IUndoCommand.cs" />
     <Compile Include="Structure.cs" />
     <Compile Include="theMainWindow.xaml.cs">
       <DependentUpon>theMainWindow.xaml</DependentUpon>

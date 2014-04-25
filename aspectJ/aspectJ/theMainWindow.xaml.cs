@@ -17,10 +17,11 @@ namespace aspectJ
 	/// </summary>
 	public partial class theMainWindow : Window
 	{
+        public CodeManager codemanager;
 		public theMainWindow()
 		{
 			this.InitializeComponent();
-			
+            codemanager = new CodeManager();
 			// 在此点之下插入创建对象所需的代码。
 		}
 
