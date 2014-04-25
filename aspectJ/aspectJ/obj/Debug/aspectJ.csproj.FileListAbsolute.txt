@@ -91,8 +91,6 @@ Z:\repos\AspectJ\aspectJ\aspectJ\obj\Debug\aspectJ_MarkupCompile.cache
 Z:\repos\AspectJ\aspectJ\aspectJ\obj\Debug\aspectJ_MarkupCompile.lref
 Z:\repos\AspectJ\aspectJ\aspectJ\obj\Debug\treeGraph.baml
 Z:\repos\AspectJ\aspectJ\aspectJ\obj\Debug\aspectJ.g.resources
-D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.exe
-D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.pdb
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\bin\Debug\aspectJ.exe
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\bin\Debug\aspectJ.pdb
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\bin\Debug\Microsoft.Expression.Interactions.dll
@@ -138,3 +136,5 @@ D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ_MarkupCompile.cache
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ_MarkupCompile.lref
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\treeGraph.baml
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.g.resources
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.exe
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.pdb

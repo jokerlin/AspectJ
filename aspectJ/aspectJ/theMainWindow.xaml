@@ -129,51 +129,22 @@
 			</TabItem>
 		</TabControl>
 		<RichTextBox x:Name="richTextBox" Margin="206,77,17.253,15.625" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle3}" Foreground="#FFE9E9E9"  >
-			<FlowDocument>
-				<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
-			</FlowDocument>
-		</RichTextBox>
+            <FlowDocument/>
+        </RichTextBox>
 		<TextBlock HorizontalAlignment="Left" Height="14.998" Margin="19.5,3.002,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100.667" Foreground="#FF3C3C3C"><Run Language="zh-cn" Text="AspectJ Editor"/></TextBlock>
 		<Button x:Name="closeButton" Content="X" HorizontalAlignment="Right" Height="19.333" Margin="0,0.918,11.022,0" Style="{DynamicResource ButtonStyle3}" VerticalAlignment="Top" Width="22.581" RenderTransformOrigin="0.166,0.3" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3C3C" FontSize="14.667" Focusable="False" Click="closeButton_Click"/>
 		<Button Content="━" HorizontalAlignment="Right" Height="19.333" Margin="0,0.918,35.67,0" Style="{DynamicResource ButtonStyle3}" VerticalAlignment="Top" Width="22.581" RenderTransformOrigin="0.166,0.3" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3C3C" FontSize="14.667" Focusable="False"/>
-		<Button Content="" HorizontalAlignment="Left" Height="25.33" Margin="289,48.835,0,0" Style="{DynamicResource undoButtonStyle}" VerticalAlignment="Top" Width="26.875" BorderBrush="{x:Null}" Focusable="False" IsEnabled="False">
-			<Button.Background>
-				<ImageBrush ImageSource="images/undoButton.png"/>
-			</Button.Background>
-		</Button>
-		<Button Content="" HorizontalAlignment="Left" Height="25.33" Margin="328.875,48.835,0,0" Style="{DynamicResource redoButtonStyle}" VerticalAlignment="Top" Width="26.875" BorderBrush="{x:Null}" Focusable="False" IsEnabled="False">
-			<Button.Background>
-				<ImageBrush ImageSource="images/redoButtonDisable.png"/>
-			</Button.Background>
-		</Button>
-	</Grid>
+        <ToolBar HorizontalAlignment="Left" Margin="278,46,0,0" VerticalAlignment="Top" Height="31" Width="226" Background="{x:Null}" Style="{DynamicResource ToolBarStyle1}">
+            <Button x:Name="undoButton" Command="Undo"  Content="" HorizontalAlignment="Left" Height="25" Style="{DynamicResource undoButtonStyle}" VerticalAlignment="Top" Width="27" BorderBrush="{x:Null}" Focusable="False">
+                <Button.Background>
+                    <ImageBrush ImageSource="images/undoButton.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="redo" Command="Redo" Content="" HorizontalAlignment="Left" Height="25" Style="{DynamicResource redoButtonStyle}" VerticalAlignment="Top" Width="27" BorderBrush="{x:Null}" Focusable="False" RenderTransformOrigin="2.53,0.276">
+                <Button.Background>
+                    <ImageBrush ImageSource="images/redoButtonDisable.png"/>
+                </Button.Background>
+            </Button>
+        </ToolBar>
+    </Grid>
 </Window>
