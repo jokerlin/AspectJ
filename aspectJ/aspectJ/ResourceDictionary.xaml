@@ -388,14 +388,24 @@
 					</ControlTemplate.Resources>
 					
 					<!-- 我们将 Grid 用作根，原因在于这便于添加更多的元素来自定义按钮 -->
+					<!-- 我们将 Grid 用作根，原因在于这便于添加更多的元素来自定义按钮 -->
 					<Grid x:Name="Grid">
+						
+						<!-- Content Presenter 是控件放置文本内容等项之处 -->
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal"/>
+								<VisualState x:Name="MouseOver"/>
+								<VisualState x:Name="Pressed"/>
+								<VisualState x:Name="Disabled"/>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
 						<Border x:Name="Border" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
 							<Border.Background>
 								<ImageBrush ImageSource="images/refreshButton.png"/>
 							</Border.Background>
 						</Border>
 						
-						<!-- Content Presenter 是控件放置文本内容等项之处 -->
 						<!-- 通过利用绑定，无需编辑模板即可将控件参数化 -->
 						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
 					</Grid>
@@ -1515,6 +1525,124 @@
 							<Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
 							<Setter Property="BorderBrush" Value="{DynamicResource DisabledBorderBrush}" TargetName="Border"/>
 							<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="undoButtonStyle" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+		<Setter Property="FocusVisualStyle" Value="{DynamicResource SimpleButtonFocusVisual}"/>
+		<Setter Property="Background" Value="{DynamicResource NormalBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<ControlTemplate.Resources>
+						<Storyboard x:Key="Storyboard1">
+							<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+								<EasingColorKeyFrame KeyTime="0" Value="#FF3C3C3C"/>
+								<EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF646464"/>
+							</ColorAnimationUsingKeyFrames>
+						</Storyboard>
+					</ControlTemplate.Resources>
+					
+					<!-- 我们将 Grid 用作根，原因在于这便于添加更多的元素来自定义按钮 -->
+					<Grid x:Name="Grid">
+						<Rectangle x:Name="rectangle" Fill="#FF3C3C3C" Margin="0" Stroke="{x:Null}"/>
+						<Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+							<Border.Background>
+								<ImageBrush ImageSource="images/undoButton.png"/>
+							</Border.Background>
+						</Border>
+						
+						<!-- 通过利用绑定，无需编辑模板即可将控件参数化 -->
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+					</Grid>
+					
+					<!--每种状态都基于模板中的 Border 来设置画笔 -->
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsKeyboardFocused" Value="true">
+							<Setter Property="BorderBrush" Value="{DynamicResource DefaultedBorderBrush}" TargetName="Border"/>
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="true">
+							<Trigger.ExitActions>
+								<StopStoryboard BeginStoryboardName="Storyboard1_BeginStoryboard"/>
+							</Trigger.ExitActions>
+							<Trigger.EnterActions>
+								<BeginStoryboard x:Name="Storyboard1_BeginStoryboard" Storyboard="{StaticResource Storyboard1}"/>
+							</Trigger.EnterActions>
+						</Trigger>
+						<Trigger Property="IsPressed" Value="true">
+							<Setter Property="Fill" TargetName="rectangle" Value="#FF2980B9"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="true"/>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Background" TargetName="Border">
+								<Setter.Value>
+									<ImageBrush ImageSource="images/undoButtonDisable.png"/>
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="redoButtonStyle" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+		<Setter Property="FocusVisualStyle" Value="{DynamicResource SimpleButtonFocusVisual}"/>
+		<Setter Property="Background" Value="{DynamicResource NormalBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<ControlTemplate.Resources>
+						<Storyboard x:Key="Storyboard1">
+							<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+								<EasingColorKeyFrame KeyTime="0" Value="#FF3C3C3C"/>
+								<EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF646464"/>
+							</ColorAnimationUsingKeyFrames>
+						</Storyboard>
+					</ControlTemplate.Resources>
+					
+					<!-- 我们将 Grid 用作根，原因在于这便于添加更多的元素来自定义按钮 -->
+					<Grid x:Name="Grid">
+						
+						<!-- Content Presenter 是控件放置文本内容等项之处 -->
+						<Rectangle x:Name="rectangle" Fill="#FF3C3C3C" Margin="0" Stroke="{x:Null}"/>
+						<Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+							<Border.Background>
+								<ImageBrush ImageSource="images/redoButton.png"/>
+							</Border.Background>
+						</Border>
+						
+						<!-- 通过利用绑定，无需编辑模板即可将控件参数化 -->
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+					</Grid>
+					
+					<!--每种状态都基于模板中的 Border 来设置画笔 -->
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsKeyboardFocused" Value="true">
+							<Setter Property="BorderBrush" Value="{DynamicResource DefaultedBorderBrush}" TargetName="Border"/>
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="true">
+							<Trigger.ExitActions>
+								<StopStoryboard BeginStoryboardName="Storyboard1_BeginStoryboard"/>
+							</Trigger.ExitActions>
+							<Trigger.EnterActions>
+								<BeginStoryboard x:Name="Storyboard1_BeginStoryboard" Storyboard="{StaticResource Storyboard1}"/>
+							</Trigger.EnterActions>
+						</Trigger>
+						<Trigger Property="IsPressed" Value="true">
+							<Setter Property="Fill" TargetName="rectangle" Value="#FF2980B9"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="true"/>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Background" TargetName="Border">
+								<Setter.Value>
+									<ImageBrush ImageSource="images/redoButtonDisable.png"/>
+								</Setter.Value>
+							</Setter>
 						</Trigger>
 					</ControlTemplate.Triggers>
 				</ControlTemplate>

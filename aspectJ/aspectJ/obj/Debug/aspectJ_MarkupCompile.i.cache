@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-Z:\repos\AspectJ\aspectJ\aspectJ\obj\Debug\
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\
 aspectJ
 none
 false
 DEBUG;TRACE
-Z:\repos\AspectJ\aspectJ\aspectJ\App.xaml
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\App.xaml
 8108202182
 
-16384220182
+16946406828
 151213065917
 codeWindow.xaml;elementBox.xaml;FunctionChoose.xaml;MainWindow.xaml;ResourceDictionary.xaml;Simple Styles.xaml;theMainWindow.xaml;treeGraph.xaml;
 
