@@ -11,13 +11,22 @@ namespace aspectJ
     class GetCalls
     {
         /// <summary>
-        /// 调用入口
+        /// Enterance
         /// </summary>
-        public void Run()
+        /// <returns>0==>Success,-1==>Fail</returns>
+        public int Run()
         {
-            WriteCompileFile();  //生成bat文件
-            RunCmd(@"compile.bat");  //运行compile.bat文件ajc编译
-            RunCmd(@"excution.bat");  //运行excution.bat文件java执行
+            int re = WriteCompileFile();  //生成bat文件
+            if (re == 0)
+            {
+                RunCmd(@"compile.bat");  //运行compile.bat文件ajc编译
+                RunCmd(@"excution.bat");  //运行excution.bat文件java执行
+                return 0;
+            }
+            else 
+            {
+                return -1;
+            }
             //Process p = new Process();
             //p.StartInfo.FileName = @"C:\Users\linheng\Documents\aspectJ\aspectJ\bin\Debug\excution.bat"; //bat文件路径
             //p.StartInfo.UseShellExecute = false;
@@ -68,25 +77,36 @@ namespace aspectJ
         /// <summary>
         /// 生成bat文件
         /// </summary>
-        private void WriteCompileFile()
+        /// <returns>0==>Success,-1==>Fail</returns>
+        private int WriteCompileFile()
         {
-            string classpath = ReadAJCProFile();
-            string path = ReadJavaProFile();
-            string projectpath = ReadProjectFile().Item1;
-            string projectMain = ReadProjectFile().Item2;
-            string ins_ajc = @"ajc -1.7 -classpath " + classpath + @"\lib\aspectjrt.jar " + projectpath + @"\*.aj " + projectpath + @"\*.java";
-            string ins_java = "\"" + path + "\\java.exe\"  -classpath " + classpath + @"\lib\aspectjrt.jar;" + projectpath + @"\ " + projectMain;
-            string strWriteFilePath = (@"compile.bat");
-            StreamWriter srWriteFile = new StreamWriter(strWriteFilePath);
-            string strWriteFilePath2 = (@"excution.bat");
-            StreamWriter srWriteFile2 = new StreamWriter(strWriteFilePath2);
-            srWriteFile.WriteLine(@"cd " + projectpath);
-            srWriteFile.WriteLine(ins_ajc);
-            srWriteFile2.WriteLine(@"cd " + projectpath);
-            srWriteFile2.WriteLine(ins_java);
-            //srWriteFile2.WriteLine("pause");
-            srWriteFile.Close();
-            srWriteFile2.Close();
+            try
+            {
+                string classpath = ReadAJCProFile();
+                string path = ReadJavaProFile();
+                string projectpath = ReadProjectFile().Item1;
+                string projectMain = ReadProjectFile().Item2;
+                string ins_ajc = @"ajc -1.7 -classpath " + classpath + @"\lib\aspectjrt.jar " + projectpath + @"\*.aj " + projectpath + @"\*.java";
+                string ins_java = "\"" + path + "\\java.exe\"  -classpath " + classpath + @"\lib\aspectjrt.jar;" + projectpath + @"\ " + projectMain;
+                string strWriteFilePath = (@"compile.bat");
+                StreamWriter srWriteFile = new StreamWriter(strWriteFilePath);
+                string strWriteFilePath2 = (@"excution.bat");
+                StreamWriter srWriteFile2 = new StreamWriter(strWriteFilePath2);
+                srWriteFile.WriteLine(projectpath.Substring(0,2));
+                srWriteFile.WriteLine(@"cd " + projectpath);
+                srWriteFile.WriteLine(ins_ajc);
+                srWriteFile2.WriteLine(projectpath.Substring(0, 2));
+                srWriteFile2.WriteLine(@"cd " + projectpath);
+                srWriteFile2.WriteLine(ins_java);
+                //srWriteFile2.WriteLine("pause");
+                srWriteFile.Close();
+                srWriteFile2.Close();
+                return 0;
+            }
+            catch
+            {
+                return -1;
+            }
         }
         /// <summary>
         /// 执行bat
