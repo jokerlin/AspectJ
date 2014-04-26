@@ -13,7 +13,7 @@ namespace aspectJ
             codemanager = new CodeManager();
         }
 
-        public void InsertCode(int index, string code)
+        private void InsertCode(int index, string code)
         {
             InsertCodeCommand cmd = new InsertCodeCommand(codemanager);
             codemanager.Execute(cmd);

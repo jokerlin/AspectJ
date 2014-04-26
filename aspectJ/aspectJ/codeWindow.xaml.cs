@@ -17,10 +17,13 @@ namespace aspectJ
 	/// </summary>
 	public partial class codeWindow : Window
 	{
-		public codeWindow()
+        RichTextBox outRichTextBox;
+        CodeEditor codeEditor;
+        
+
+        public codeWindow()
 		{
-			this.InitializeComponent();
-			
+			this.InitializeComponent();	
 			// 在此点之下插入创建对象所需的代码。
 		}
 
@@ -31,12 +34,20 @@ namespace aspectJ
 
 		private void acceptButton_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
-			this.Close();// 在此处添加事件处理程序实现。
+            TextRange textRange = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
+            codeEditor.AppendCode(textRange.Text);
+            outRichTextBox.AppendText(textRange.Text);
+            this.Close();// 在此处添加事件处理程序实现。
 		}
 
 		private void cancelButton_Click(object sender, System.Windows.RoutedEventArgs e)
 		{
 			this.Close();// 在此处添加事件处理程序实现。
 		}
+        public void set(ref RichTextBox _richTextBox, ref CodeEditor _codeEditor)
+        {
+            outRichTextBox = _richTextBox;
+            codeEditor = _codeEditor;
+        }
 	}
 }

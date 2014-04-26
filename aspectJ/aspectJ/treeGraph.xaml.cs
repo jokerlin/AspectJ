@@ -30,7 +30,7 @@ namespace aspectJ
         public treeGraph()
         {
             InitializeComponent();
-            AnalyseFuction af = new AnalyseFuction("D:\\wpf\\pro_from_blend\\aspectJ\\test.txt");
+            AnalyseFuction af = new AnalyseFuction("./calls.txt");
             af.readFile();
             pieces = af.getPieceList();
 

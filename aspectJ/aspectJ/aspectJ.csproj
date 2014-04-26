@@ -68,6 +68,7 @@
     <Compile Include="FunctionChoose.xaml.cs">
       <DependentUpon>FunctionChoose.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GetCalls.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="InsertCodeCommand.cs" />
     <Compile Include="IUndoCommand.cs" />
@@ -137,8 +138,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\redoButton.png" />
+    <Resource Include="images\redoButtonDisable.png" />
     <Resource Include="images\refreshButton.png" />
     <Resource Include="images\refreshButtonOver.png" />
+    <Resource Include="images\undoButton.png" />
+    <Resource Include="images\undoButtonDisable.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath32)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
