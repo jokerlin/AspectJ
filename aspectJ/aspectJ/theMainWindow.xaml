@@ -6,8 +6,22 @@
 	x:Name="Window"
 	Title="theMainWindow"
 	Width="982.253" Height="729.955" WindowStartupLocation="CenterScreen" Background="{x:Null}" AllowsTransparency="True" WindowStyle="None">
+    <Window.Resources>
 
-	<Grid x:Name="LayoutRoot">
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="ResourceDictionary.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+
+    </Window.Resources>
+
+
+    <Grid x:Name="LayoutRoot">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition/>
 		</Grid.ColumnDefinitions>
@@ -82,7 +96,7 @@
 			<Rectangle Fill="#FF3C3C3C" Margin="0,17,0,-0.5" RadiusY="4.5" RadiusX="4.5" Grid.ColumnSpan="2"/>
 			<Button x:Name="acceptButton_Copy1" Content="执行" HorizontalAlignment="Left" Margin="131,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="61"/>
 			<Button x:Name="functionDropButton" Content="调用关系" HorizontalAlignment="Left" Margin="192,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="61" Click="functionDropButton_Click"/>
-			<Button x:Name="acceptButton" Content="打开" HorizontalAlignment="Left" Margin="10,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="60"/>
+			<Button x:Name="openButton" Content="打开" HorizontalAlignment="Left" Margin="10,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="60" Click="openButton_Click"/>
 			<Button x:Name="acceptButton_Copy" Content="编译" HorizontalAlignment="Left" Margin="70,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="61"/>
 		</Grid>
 		<Rectangle Fill="#FF3C3C3C" Stroke="Black" RadiusX="7" RadiusY="7" Margin="8,45.5,7.172,8">
@@ -94,12 +108,8 @@
 		<TabControl HorizontalAlignment="Left" Margin="14.5,54.167,0,15.625" Width="172" Style="{DynamicResource TabControlStyle1}" Background="#FF595959" BorderBrush="{x:Null}">
 			<TabItem Header="源码列表" Style="{DynamicResource TabItemStyle1}" Foreground="#FFF0F0F0">
 				<Grid Background="#FFE5E5E5">
-					<ListBox Background="#FF282828">
-						<ListBoxItem Content="A.java" Style="{DynamicResource ListBoxItemStyle2}"/>
-						<ListBoxItem Content="B.java" Style="{DynamicResource ListBoxItemStyle2}"/>
-						<ListBoxItem Content="C.java" Style="{DynamicResource ListBoxItemStyle2}"/>
-					</ListBox>
-				</Grid>
+					<ListBox x:Name="srcList" Background="#FF282828"/>
+                </Grid>
 			</TabItem>
 			<TabItem Header="函数列表" Style="{DynamicResource TabItemStyle1}" Foreground="#FFF0F0F0">
 				<Grid Background="#FF2F2F2F">
@@ -148,3 +158,4 @@
         </ToolBar>
     </Grid>
 </Window>
+    

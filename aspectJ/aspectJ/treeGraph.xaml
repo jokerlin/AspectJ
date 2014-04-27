@@ -3,31 +3,23 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:aspectJ"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="aspectJ.treeGraph"
-        Title="treeGraph" Height="729.955" Width="982.253" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" >
+        Title="treeGraph" Height="729" Width="982" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" >
 	<Window.Resources>
 		<Storyboard x:Key="OnMouseEnter1"/>
 		<Storyboard x:Key="OnMouseLeftButtonDown1"/>
 		<Storyboard x:Key="OnMouseEnter2"/>
 		<Storyboard x:Key="OnMouseEnter3"/>
 	</Window.Resources>
-    <Grid>
-    	<Grid Height="41.5" Margin="8,0" VerticalAlignment="Top">
-    		<Rectangle Fill="#FF232323" Margin="8,0,8,-12" RadiusY="4.5" RadiusX="4.5" Stroke="Black" Height="24.5" VerticalAlignment="Bottom"/>
-    		<Rectangle Fill="#FF3C3C3C" Margin="0,17,0,0" RadiusY="4.5" RadiusX="4.5" Stroke="Black"/>
-    		<Button x:Name="acceptButton_Copy1" Content="执行" HorizontalAlignment="Left" Margin="131.249,19.085,0,0.125" Style="{DynamicResource ButtonStyle1}" Width="60.833"/>
-    		<Button x:Name="functionDropButton" Content="调用关系" HorizontalAlignment="Left" Margin="192.082,19.085,0,0.125" Style="{DynamicResource ButtonStyle1}" Width="60.833" Click="functionDropButton_Click"/>
-    		<Button x:Name="acceptButton" Content="打开" HorizontalAlignment="Left" Margin="9.583,19.085,0,0" Style="{DynamicResource ButtonStyle1}" Width="60.833"/>
-    		<Button x:Name="acceptButton_Copy" Content="编译" HorizontalAlignment="Left" Margin="70.416,19.085,0,0" Style="{DynamicResource ButtonStyle1}" Width="60.833"/>
-    	</Grid>
-    	<Rectangle Fill="#FF3C3C3C" Stroke="Black" RadiusX="7" RadiusY="7" Margin="8,45.5,7.172,8" Width="967.081" Height="676.455">
+    <Grid Margin="0,0,21.5,0">
+    	<Rectangle Fill="#FF181818" Stroke="Black" RadiusX="7" RadiusY="7" Margin="15.172,8,0,35.5" Opacity="0.895">
     		<Rectangle.Effect>
     			<DropShadowEffect/>
     		</Rectangle.Effect>
     	</Rectangle>
-    	<ScrollViewer x:Name="scrollViewer" Margin="22.625,61.5,8,15" VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Auto"  Background="#FF3C3C3C" Style="{DynamicResource canvasScrollViewerStyle}" >
+    	<ScrollViewer x:Name="scrollViewer" Margin="24.172,21.5,0,42" VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Auto" Style="{DynamicResource canvasScrollViewerStyle}" >
     		<local:DrawingCanvas x:Name="drawingSurface" ClipToBounds="True"
     			Height="806" Width="1098" MouseLeftButtonDown="drawingSurface_MouseLeftButtonDown" MouseRightButtonDown="drawingSurface_MouseRightButtonDown"  />
     	</ScrollViewer>
-    	<Button Content="" Height="24.5" Style="{DynamicResource refreshButtonStyle}" Width="28.25" HorizontalAlignment="Right" Margin="0,0,11.375,10" VerticalAlignment="Bottom" RenderTransformOrigin="3.773,2.15" Click="Button_Click"/>
+    	<Button Content="" Height="24.5" Style="{DynamicResource refreshButtonStyle}" Width="28.25" HorizontalAlignment="Right" Margin="0,0,90.375,155" VerticalAlignment="Bottom" RenderTransformOrigin="3.773,2.15" Click="Button_Click"/>
     </Grid>
 </Window>

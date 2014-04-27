@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Forms;
 
 namespace aspectJ
 {
@@ -27,6 +28,9 @@ namespace aspectJ
             codemanager = new CodeManager();
             codeEditor = new CodeEditor();
 			// 在此点之下插入创建对象所需的代码。
+            
+           
+
 		}
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -55,6 +59,31 @@ namespace aspectJ
         private void undoButton_Click(object sender, RoutedEventArgs e)
         {
             codeEditor.Undo();
+        }
+
+        private void openButton_Click(object sender, RoutedEventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            folderBrowserDialog.Description = "请选择Java源码所在的文件夹";
+            folderBrowserDialog.ShowNewFolderButton = true;
+            //folderBrowserDialog.RootFolder = Environment.SpecialFolder.Personal;
+            System.Windows.Forms.DialogResult result = folderBrowserDialog.ShowDialog();
+            if (result == System.Windows.Forms.DialogResult.Cancel)
+            {
+                return;
+            }
+
+            string folderName = folderBrowserDialog.SelectedPath;
+            Program.functionlist(folderName);
+            for (int i = 0; i < Program.fl.Count; i++)
+            {
+               // ResourceDictionary resourceDictionary = new ResourceDictionary();
+                //resourceDictionary.Source=new Uri("
+                ListBoxItem lbi = new ListBoxItem() { Content = Program.fl[i], Style = Resources["ListBoxItemStyle2"] as Style};
+                srcList.Items.Add(lbi);
+                
+                
+            }
         }
 	}
 }
