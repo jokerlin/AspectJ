@@ -3,23 +3,33 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:aspectJ"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="aspectJ.treeGraph"
-        Title="treeGraph" Height="729" Width="982" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" >
+        Title="treeGraph" Height="648" Width="959.5" WindowStartupLocation="CenterOwner" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" Foreground="{x:Null}" >
 	<Window.Resources>
 		<Storyboard x:Key="OnMouseEnter1"/>
 		<Storyboard x:Key="OnMouseLeftButtonDown1"/>
 		<Storyboard x:Key="OnMouseEnter2"/>
 		<Storyboard x:Key="OnMouseEnter3"/>
 	</Window.Resources>
-    <Grid Margin="0,0,21.5,0">
-    	<Rectangle Fill="#FF181818" Stroke="Black" RadiusX="7" RadiusY="7" Margin="15.172,8,0,35.5" Opacity="0.895">
+    <Grid Margin="0,0,48.833,8">
+    	<Rectangle Margin="0,0,-48.576,0" RadiusY="7.674" RadiusX="7.674" Opacity="0.8" HorizontalAlignment="Right" Width="82.243" Height="99" VerticalAlignment="Top"/>
+    	<Rectangle Margin="5,0,-8.242,0" RadiusY="7.674" RadiusX="7.674" Opacity="0.795"/>
+    	<Rectangle Fill="#FF454545" RadiusX="7" RadiusY="7" Margin="15.172,8,0,8" Stroke="#FF878787">
     		<Rectangle.Effect>
     			<DropShadowEffect/>
     		</Rectangle.Effect>
     	</Rectangle>
-    	<ScrollViewer x:Name="scrollViewer" Margin="24.172,21.5,0,42" VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Auto" Style="{DynamicResource canvasScrollViewerStyle}" >
-    		<local:DrawingCanvas x:Name="drawingSurface" ClipToBounds="True"
-    			Height="806" Width="1098" MouseLeftButtonDown="drawingSurface_MouseLeftButtonDown" MouseRightButtonDown="drawingSurface_MouseRightButtonDown"  />
+    	<ScrollViewer x:Name="scrollViewer" Margin="24.172,21.5,2.508,15" VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Auto" Style="{DynamicResource canvasScrollViewerStyle}" >
+    		<local:DrawingCanvas x:Name="drawingSurface" ClipToBounds="True" MouseLeftButtonDown="drawingSurface_MouseLeftButtonDown" MouseRightButtonDown="drawingSurface_MouseRightButtonDown"  />
     	</ScrollViewer>
-    	<Button Content="" Height="24.5" Style="{DynamicResource refreshButtonStyle}" Width="28.25" HorizontalAlignment="Right" Margin="0,0,90.375,155" VerticalAlignment="Bottom" RenderTransformOrigin="3.773,2.15" Click="Button_Click"/>
+    	<Grid HorizontalAlignment="Right" Margin="0,7.75,-44.826,0" VerticalAlignment="Top">
+    		<Rectangle Fill="#FF454545" RadiusY="7.674" RadiusX="7.674" Margin="0,0.25,2.667,0" Height="40.333" VerticalAlignment="Top" Stroke="#FF878787"/>
+    		<Rectangle Fill="#FF454545" RadiusY="7.674" RadiusX="7.674" Margin="0,42,2.667,17.667" Stroke="#FF878787" Width="40.667" Height="40.333"/>
+    		<Button x:Name="refreshButton" Content="" Style="{DynamicResource refreshButtonStyle}" Margin="4.242,46.835,7.499,22.165" RenderTransformOrigin="3.773,2.15" Click="Button_Click" Width="31.593" Height="31"/>
+    		<Button x:Name="returnButton" Content="" Style="{DynamicResource returnButtonStyle}" Margin="4.242,5.085,7.499,0" RenderTransformOrigin="3.773,2.15" Height="31" VerticalAlignment="Top" Click="returnButton_Click" Width="31.593">
+    			<Button.Background>
+    				<ImageBrush/>
+    			</Button.Background>
+    		</Button>
+    	</Grid>
     </Grid>
 </Window>

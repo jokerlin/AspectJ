@@ -83,6 +83,11 @@ namespace aspectJ
             this.Close();
         }
 
+        private void returnButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	this.Close();// 在此处添加事件处理程序实现。
+        }
+
     }
 
 
@@ -141,8 +146,8 @@ namespace aspectJ
     public class DrawControl
     {
         //private static LinearGradientBrush nameRectBrush = new LinearGradientBrush(Color.FromRgb(75, 208, 255), Color.FromRgb(0, 170, 230), 90.0); //类名矩形颜色
-        private static SolidColorBrush classRectBrush = new SolidColorBrush(Color.FromRgb(0, 173, 230) ); //类名矩形颜色 0,170,230  51,153,255
-        private static SolidColorBrush containRectBrush = new SolidColorBrush(Color.FromRgb(31, 78, 121)); //contain类名矩形
+        private static SolidColorBrush classRectBrush = new SolidColorBrush(Color.FromRgb(52, 152, 219)); //类名矩形颜色 0,170,230  51,153,255,0, 173, 230
+        private static SolidColorBrush containRectBrush = new SolidColorBrush(Color.FromRgb(31, 78, 121)); //contain类名矩形 31, 78, 121
         private static SolidColorBrush highlightRectBrush = new SolidColorBrush(Colors.Khaki );
         private static SolidColorBrush functionRectBrush = new SolidColorBrush(Color.FromRgb(255, 255, 255) );//函数名矩形颜色
         private static SolidColorBrush nameBrush = new SolidColorBrush(Color.FromRgb(70, 70, 70));//函数名颜色

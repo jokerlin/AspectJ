@@ -259,7 +259,7 @@
 
 	<Grid x:Name="LayoutRoot">
 		<Rectangle Fill="#FF181818" Margin="8" RadiusY="6" RadiusX="6" Opacity="0.945"/>
-		<RichTextBox x:Name="richTextBox" Margin="8,42.157,8,39.665" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFEDEDED"  >
+		<RichTextBox x:Name="richTextBox" Margin="8,42.157,8,39.665" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9"  >
 			<FlowDocument>
 				<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
 				<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>

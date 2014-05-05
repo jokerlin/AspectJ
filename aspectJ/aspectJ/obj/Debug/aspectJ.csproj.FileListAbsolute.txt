@@ -137,4 +137,6 @@ D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\treeGraph.baml
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.g.resources
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.exe
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.pdb
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\LoadingWindow.baml
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\LoadingWindow.g.cs
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.csprojResolveAssemblyReference.cache

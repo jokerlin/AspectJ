@@ -389,7 +389,7 @@
 					
 					<!-- 我们将 Grid 用作根，原因在于这便于添加更多的元素来自定义按钮 -->
 					<!-- 我们将 Grid 用作根，原因在于这便于添加更多的元素来自定义按钮 -->
-					<Grid x:Name="Grid">
+					<Grid x:Name="Grid" Background="#02000000">
 						
 						<!-- Content Presenter 是控件放置文本内容等项之处 -->
 						<VisualStateManager.VisualStateGroups>
@@ -1355,7 +1355,7 @@
 										</ColorAnimationUsingKeyFrames>
 										<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="contentControl">
 											<EasingColorKeyFrame KeyTime="0" Value="#FF3498DB"/>
-											<EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF282828"/>
+											<EasingColorKeyFrame KeyTime="0:0:0.3" Value="White"/>
 										</ColorAnimationUsingKeyFrames>
 									</Storyboard>
 								</VisualState>
@@ -1871,6 +1871,65 @@
 				<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
 			</DataTrigger>
 		</Style.Triggers>
+	</Style>
+	<Style x:Key="returnButtonStyle" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+		<Setter Property="FocusVisualStyle" Value="{DynamicResource SimpleButtonFocusVisual}"/>
+		<Setter Property="Background" Value="{DynamicResource NormalBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<ControlTemplate.Resources>
+						<Storyboard x:Key="Storyboard1">
+							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Border">
+								<EasingDoubleKeyFrame KeyTime="0" Value="0.265"/>
+								<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+							</DoubleAnimationUsingKeyFrames>
+						</Storyboard>
+					</ControlTemplate.Resources>
+					
+					<!-- 我们将 Grid 用作根，原因在于这便于添加更多的元素来自定义按钮 -->
+					<!-- 我们将 Grid 用作根，原因在于这便于添加更多的元素来自定义按钮 -->
+					<Grid x:Name="Grid" Background="#02000000">
+						
+						<!-- Content Presenter 是控件放置文本内容等项之处 -->
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal"/>
+								<VisualState x:Name="MouseOver"/>
+								<VisualState x:Name="Pressed"/>
+								<VisualState x:Name="Disabled"/>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Border x:Name="Border" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+							<Border.Background>
+								<ImageBrush ImageSource="images/returnButton.png"/>
+							</Border.Background>
+						</Border>
+						
+						<!-- 通过利用绑定，无需编辑模板即可将控件参数化 -->
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+					</Grid>
+					
+					<!--每种状态都基于模板中的 Border 来设置画笔 -->
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="true">
+							<Trigger.ExitActions>
+								<StopStoryboard BeginStoryboardName="Storyboard1_BeginStoryboard"/>
+							</Trigger.ExitActions>
+							<Trigger.EnterActions>
+								<BeginStoryboard x:Name="Storyboard1_BeginStoryboard" Storyboard="{StaticResource Storyboard1}"/>
+							</Trigger.EnterActions>
+							<Setter Property="Background" TargetName="Border">
+								<Setter.Value>
+									<ImageBrush ImageSource="images/returnButtonOver.png"/>
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
 	</Style>
 	
 </ResourceDictionary>

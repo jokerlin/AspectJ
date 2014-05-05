@@ -10,7 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Forms;
-
+using System.Threading;
 namespace aspectJ
 {
 	/// <summary>
@@ -43,12 +43,18 @@ namespace aspectJ
 
         private void functionDropButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            LoadingWindow lw = new LoadingWindow();
+            lw.Show();
+            lw.Owner = this;
+
             GetCalls getCalls = new GetCalls();
             getCalls.Run();
             treeGraph tg = new treeGraph();
-            tg.Show();
-            this.Close(); 
+            lw.Close();
+            tg.Owner = this;
+            tg.ShowDialog();
+            
+            
         }
 
         private void closeButton_Click(object sender, System.Windows.RoutedEventArgs e)

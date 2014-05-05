@@ -138,8 +138,10 @@
 				</Grid>
 			</TabItem>
 		</TabControl>
-		<RichTextBox x:Name="richTextBox" Margin="206,77,17.253,15.625" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle3}" Foreground="#FFE9E9E9"  >
-            <FlowDocument/>
+		<RichTextBox x:Name="richTextBox" Margin="206,77,17.253,15.625" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle3}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9"  >
+            <FlowDocument>
+            	<Paragraph/>
+            </FlowDocument>
         </RichTextBox>
 		<TextBlock HorizontalAlignment="Left" Height="14.998" Margin="19.5,3.002,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100.667" Foreground="#FF3C3C3C"><Run Language="zh-cn" Text="AspectJ Editor"/></TextBlock>
 		<Button x:Name="closeButton" Content="X" HorizontalAlignment="Right" Height="19.333" Margin="0,0.918,11.022,0" Style="{DynamicResource ButtonStyle3}" VerticalAlignment="Top" Width="22.581" RenderTransformOrigin="0.166,0.3" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3C3C" FontSize="14.667" Focusable="False" Click="closeButton_Click"/>
