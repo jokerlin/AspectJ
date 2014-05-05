@@ -61,7 +61,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Advices.cs" />
     <Compile Include="AnalyseFuction.cs" />
+    <Compile Include="AspectGeneration.cs" />
     <Compile Include="CodeEditor.cs" />
     <Compile Include="CodeManager.cs" />
     <Compile Include="codeWindow.xaml.cs">
@@ -77,6 +79,7 @@
     <Compile Include="LoadingWindow.xaml.cs">
       <DependentUpon>LoadingWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pointcuts.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Structure.cs" />
     <Compile Include="theMainWindow.xaml.cs">
