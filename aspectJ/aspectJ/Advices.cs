@@ -15,6 +15,7 @@ namespace GenerateAspect
             string AdviceString = AdviceKind + " : " + pointcutName + "() {\n}";
             advices = new List<string>();
             advices.Add(AdviceString);
+
         }
     }
 }
