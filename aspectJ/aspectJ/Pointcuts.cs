@@ -15,5 +15,9 @@ namespace GenerateAspect
             pointcuts = new List<string>();
             pointcuts.Add(pointcutString);
         }
+        public string getPointcuts(int index)
+        {
+            return pointcuts[index];
+        }
     }
 }
