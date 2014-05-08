@@ -19,5 +19,10 @@ namespace GenerateAspect
         {
             return pointcuts[index];
         }
+
+        public void delPointcutByIndex(int index)
+        {
+            pointcuts.RemoveAt(index);
+        }
     }
 }
