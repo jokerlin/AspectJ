@@ -8,19 +8,19 @@ namespace GenerateAspect
 {
     class Pointcuts
     {
-        public List<string> pointcuts;
+        public static List<string> pointcuts;
 
-        public void AddPointcut(string returnValue, string pointcutName, string pointcutKind, string regex) {
+        public static void AddPointcut(string returnValue, string pointcutName, string pointcutKind, string regex) {
             string pointcutString = returnValue + " pointcut " + pointcutName + "(): " + pointcutKind + "(" + regex + ")\n";
             pointcuts = new List<string>();
             pointcuts.Add(pointcutString);
         }
-        public string getPointcuts(int index)
+        public static string getPointcuts(int index)
         {
             return pointcuts[index];
         }
 
-        public void delPointcutByIndex(int index)
+        public static void delPointcutByIndex(int index)
         {
             pointcuts.RemoveAt(index);
         }

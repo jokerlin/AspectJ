@@ -8,14 +8,23 @@ namespace GenerateAspect
 {
     class Advices
     {
-        public List<string> advices;
+        public static List<string> advices;
 
-        public void AddAdvice(string AdviceKind, string pointcutName)
+        public static void AddAdvice(string AdviceKind, string pointcutName)
         {
             string AdviceString = AdviceKind + " : " + pointcutName + "() {\n}";
             advices = new List<string>();
             advices.Add(AdviceString);
 
+        }
+
+        public static string getAdvices(int index)
+        {
+            return advices[index];
+        }
+        public static void delAdviceByIndex(int index)
+        {
+            advices.RemoveAt(index);
         }
     }
 }
