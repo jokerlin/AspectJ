@@ -108,7 +108,11 @@
 		<TabControl HorizontalAlignment="Left" Margin="14.5,54.167,0,15.625" Width="172" Style="{DynamicResource TabControlStyle1}" Background="#FF595959" BorderBrush="{x:Null}">
 			<TabItem Header="源码列表" Style="{DynamicResource TabItemStyle1}" Foreground="#FFF0F0F0">
 				<Grid Background="#FFE5E5E5">
-					<ListBox x:Name="srcList" Background="#FF282828"/>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="0.17*"/>
+						<ColumnDefinition Width="0.83*"/>
+					</Grid.ColumnDefinitions>
+					<ListBox x:Name="srcList" Background="#FF282828" Grid.ColumnSpan="2"/>
                 </Grid>
 			</TabItem>
 			<TabItem Header="函数列表" Style="{DynamicResource TabItemStyle1}" Foreground="#FFF0F0F0">

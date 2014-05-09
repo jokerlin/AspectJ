@@ -24,7 +24,7 @@
     	<Grid HorizontalAlignment="Right" Margin="0,7.75,-44.826,0" VerticalAlignment="Top">
     		<Rectangle Fill="#FF454545" RadiusY="7.674" RadiusX="7.674" Margin="0,0.25,2.667,0" Height="40.333" VerticalAlignment="Top" Stroke="#FF878787"/>
     		<Rectangle Fill="#FF454545" RadiusY="7.674" RadiusX="7.674" Margin="0,42,2.667,17.667" Stroke="#FF878787" Width="40.667" Height="40.333"/>
-    		<Button x:Name="refreshButton" Content="" Style="{DynamicResource refreshButtonStyle}" Margin="4.242,46.835,7.499,22.165" RenderTransformOrigin="3.773,2.15" Click="Button_Click" Width="31.593" Height="31"/>
+    		<Button x:Name="refreshButton" Content="" Style="{DynamicResource refreshButtonStyle}" Margin="4.242,45.835,7.499,23.165" RenderTransformOrigin="3.773,2.15" Click="Button_Click" Width="31.593" Height="31"/>
     		<Button x:Name="returnButton" Content="" Style="{DynamicResource returnButtonStyle}" Margin="4.242,5.085,7.499,0" RenderTransformOrigin="3.773,2.15" Height="31" VerticalAlignment="Top" Click="returnButton_Click" Width="31.593">
     			<Button.Background>
     				<ImageBrush/>

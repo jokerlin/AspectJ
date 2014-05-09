@@ -1,0 +1,84 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="aspectJ.pointCutAndAdviceChoose"
+	x:Name="Window"
+	Title="pointCutAndAdviceChoose"
+	Width="663.167" Height="470.5" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}">
+
+	<Grid x:Name="LayoutRoot">
+		<Rectangle Fill="#FF181818" Margin="0,2.667,0,8" RadiusY="6" RadiusX="6" Opacity="0.945"/>
+		<Rectangle Fill="#FF8C8E94" HorizontalAlignment="Left" Height="95" Margin="7.417,2.667,0,0" VerticalAlignment="Top" Width="115.333"/>
+		<TabControl Margin="4.5,0,3.5,17" Background="#FF3D3D3D" BorderBrush="{x:Null}">
+			<TabItem Header="PointCut" Style="{DynamicResource TabItemStyle1}" Foreground="#FFCDCDCD">
+				<Grid Background="#FF3D3D3D" d:LayoutOverrides="VerticalMargin">
+					<Rectangle Fill="#FF3D3D3D" VerticalAlignment="Top" Margin="0,-0.5,0,0"/>
+					<ComboBox HorizontalAlignment="Left" Height="27.5" Style="{DynamicResource ComboBoxStyle1}" VerticalAlignment="Top" Width="228.333" Foreground="#FFCDCDCD" Margin="0,8,0,0">
+						<ComboBoxItem Content="hello" Style="{DynamicResource ComboBoxItemStyle1}"/>
+						<ComboBoxItem Content="world" Style="{DynamicResource ComboBoxItemStyle1}"/>
+					</ComboBox>
+					<RichTextBox x:Name="richTextBox" Margin="0,39.5,0,0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9"  >
+						<FlowDocument>
+							<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
+						</FlowDocument>
+					</RichTextBox>
+					<Button x:Name="addButton" Content="添加" HorizontalAlignment="Right" Height="22.665" Margin="0,12.835,121.166,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55.333" />
+					<Button x:Name="editButton" Content="编辑" HorizontalAlignment="Right" Height="22.665" Margin="0,12.835,61.833,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55.333" />
+					<Button x:Name="deleteButton" Content="删除" HorizontalAlignment="Right" Height="22.665" Margin="0,12.835,2.5,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55.333" />
+				</Grid>
+			</TabItem>
+			<TabItem Header="Advice" Style="{DynamicResource TabItemStyle1}" Foreground="#FFCDCDCD">
+				<Grid Background="#FF3D3D3D">
+					<Rectangle Fill="#FF3D3D3D" VerticalAlignment="Top" Margin="0,-0.5,0,0"/>
+					<ComboBox HorizontalAlignment="Left" Height="27.5" Style="{DynamicResource ComboBoxStyle1}" VerticalAlignment="Top" Width="228.333" Foreground="#FFCDCDCD" Margin="0,8,0,0">
+						<ComboBoxItem Content="hello" Style="{DynamicResource ComboBoxItemStyle1}"/>
+						<ComboBoxItem Content="world" Style="{DynamicResource ComboBoxItemStyle1}"/>
+					</ComboBox>
+					<RichTextBox x:Name="richTextBox_Copy" Margin="0,39.5,0,0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9"  >
+						<FlowDocument>
+							<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
+							<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
+						</FlowDocument>
+					</RichTextBox>
+					<Button x:Name="addButton_Copy" Content="添加" HorizontalAlignment="Right" Height="22.665" Margin="0,12.835,121.166,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55.333" />
+					<Button x:Name="editButton_Copy" Content="编辑" HorizontalAlignment="Right" Height="22.665" Margin="0,12.835,61.833,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55.333" />
+					<Button x:Name="deleteButton_Copy" Content="删除" HorizontalAlignment="Right" Height="22.665" Margin="0,12.835,2.5,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55.333" />
+				</Grid>
+			</TabItem>
+		</TabControl>
+	</Grid>
+</Window>

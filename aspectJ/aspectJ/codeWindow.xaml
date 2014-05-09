@@ -281,7 +281,7 @@
 				<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
 			</FlowDocument>
 		</RichTextBox>
-		<Button x:Name="acceptButton" Content="确定" HorizontalAlignment="Left" Height="22.665" Margin="162.667,0,0,13" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" Width="79.333" Click="acceptButton_Click"/>
+		<Button x:Name="acceptButton" Content="确定" HorizontalAlignment="Left" Height="22.665" Margin="162.667,0,0,13" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" Width="79.333" Click="acceptButton_Click" BorderBrush="#FF707070"/>
 		<Button x:Name="cancelButton" Content="取消" HorizontalAlignment="Right" Height="22.665" Margin="0,0,169,13" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" Width="79.333" Click="cancelButton_Click"/>
 		<Label Content="切面代码插入" HorizontalAlignment="Left" Height="25.657" Margin="8,12.5,0,0" VerticalAlignment="Top" Width="87" Foreground="Gray"/>
 	</Grid>

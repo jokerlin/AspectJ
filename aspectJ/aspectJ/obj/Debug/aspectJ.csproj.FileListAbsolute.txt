@@ -142,3 +142,9 @@ D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\LoadingWindow.g.cs
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.csprojResolveAssemblyReference.cache
 Z:\repos\AspectJ\aspectJ\aspectJ\obj\Debug\LoadingWindow.baml
 Z:\repos\AspectJ\aspectJ\aspectJ\obj\Debug\LoadingWindow.g.cs
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\pointCutAndAdviceChoose.baml
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\pointCutAndAdviceChoose.g.cs
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\addPoint.baml
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\addPoint.g.cs
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\addAdvice.baml
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\addAdvice.g.cs

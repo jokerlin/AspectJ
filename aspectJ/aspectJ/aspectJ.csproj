@@ -61,6 +61,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="addAdvice.xaml.cs">
+      <DependentUpon>addAdvice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="addPoint.xaml.cs">
+      <DependentUpon>addPoint.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Advices.cs" />
     <Compile Include="AnalyseFuction.cs" />
     <Compile Include="AspectGeneration.cs" />
@@ -79,6 +85,9 @@
     <Compile Include="LoadingWindow.xaml.cs">
       <DependentUpon>LoadingWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="pointCutAndAdviceChoose.xaml.cs">
+      <DependentUpon>pointCutAndAdviceChoose.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pointcuts.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Structure.cs" />
@@ -88,6 +97,14 @@
     <Compile Include="treeGraph.xaml.cs">
       <DependentUpon>treeGraph.xaml</DependentUpon>
     </Compile>
+    <Page Include="addAdvice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="addPoint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="codeWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -119,6 +136,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="pointCutAndAdviceChoose.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -151,6 +172,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\add.png" />
+    <Resource Include="images\addOver.png" />
+    <Resource Include="images\delete.png" />
+    <Resource Include="images\deleteOver.png" />
+    <Resource Include="images\edit.png" />
+    <Resource Include="images\editOver.png" />
     <Resource Include="images\redoButton.png" />
     <Resource Include="images\redoButtonDisable.png" />
     <Resource Include="images\refreshButton.png" />

@@ -1,0 +1,31 @@
+﻿<Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+	x:Class="aspectJ.addPointAndChose"
+	x:Name="Window"
+	Title="addPointAndChose"
+	Width="446" Height="222" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" WindowStartupLocation="CenterScreen">
+
+	<Grid x:Name="LayoutRoot">
+		<Rectangle Fill="#FF181818" Margin="8" RadiusY="6" RadiusX="6" Opacity="0.945"/>
+		<Rectangle Fill="#FF282828" Margin="8,33.657,8,39.677"/>
+		<Label Content="添加 pointCut" HorizontalAlignment="Left" Height="25.657" Margin="8,8,0,0" VerticalAlignment="Top" Width="87" Foreground="Gray"/>
+		<Label Content="切面名称" Height="28.165" Margin="34.013,40.992,0,0" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Left" Width="56" FontSize="10.667"/>
+		<TextBox HorizontalAlignment="Left" Height="28.575" Margin="94.013,40.582,0,0" Style="{DynamicResource myTextBoxStyle}" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120.658" Foreground="#FFE9E9E9"/>
+		<Label Content="返回类型" Height="28.165" Margin="34.013,86.234,0,0" VerticalAlignment="Top" Foreground="White" FontSize="10.667" HorizontalAlignment="Left" Width="56"/>
+		<ComboBox Style="{DynamicResource ComboBoxStyle1}" Foreground="#FFCDCDCD" Margin="94.013,86.234,0,0" HorizontalAlignment="Left" Height="28.165" VerticalAlignment="Top" Width="120.658">
+			<ComboBoxItem Content="public" Style="{DynamicResource ComboBoxItemStyle1}"/>
+			<ComboBoxItem Content="private" Style="{DynamicResource ComboBoxItemStyle1}"/>
+		</ComboBox>
+		<Label Content="正则表达" Margin="34.013,134.069,0,0" Foreground="White" HorizontalAlignment="Left" Width="56" FontSize="10.667" Height="28.165" VerticalAlignment="Top"/>
+		<TextBox Margin="94.013,133.659,42.002,0" Style="{DynamicResource myTextBoxStyle}" TextWrapping="Wrap" Text="TextBox" Foreground="#FFE9E9E9" Height="28.575" VerticalAlignment="Top"/>
+		<Label Content="切点类型" Height="28.165" Margin="222.673,86.234,167.327,0" VerticalAlignment="Top" Foreground="White" FontSize="10.667"/>
+		<ComboBox Height="28.165" Style="{DynamicResource ComboBoxStyle1}" VerticalAlignment="Top" Foreground="#FFCDCDCD" Margin="0,86.234,42.002,0" HorizontalAlignment="Right" Width="120.658">
+			<ComboBoxItem Content="public" Style="{DynamicResource ComboBoxItemStyle1}"/>
+			<ComboBoxItem Content="private" Style="{DynamicResource ComboBoxItemStyle1}"/>
+		</ComboBox>
+		<Button x:Name="acceptButton" Content="确定" Height="22.665" Margin="110.68,0,0,13.012" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" BorderBrush="#FF707070" HorizontalAlignment="Left" Width="79.333"/>
+		<Button x:Name="cancelButton" Content="取消" HorizontalAlignment="Right" Height="22.665" Margin="0,0,99.994,13.012" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" Width="79.333"/>
+	</Grid>
+</Window>

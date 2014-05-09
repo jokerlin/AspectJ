@@ -1931,5 +1931,90 @@
 			</Setter.Value>
 		</Setter>
 	</Style>
+	<Style x:Key="addButtonStyle" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+		<Setter Property="FocusVisualStyle" Value="{DynamicResource SimpleButtonFocusVisual}"/>
+		<Setter Property="Background" Value="{DynamicResource NormalBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource NormalBorderBrush}"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<ControlTemplate.Resources>
+						<Storyboard x:Key="Storyboard1">
+							<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="Border">
+								<EasingDoubleKeyFrame KeyTime="0" Value="0.265"/>
+								<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+							</DoubleAnimationUsingKeyFrames>
+						</Storyboard>
+					</ControlTemplate.Resources>
+					
+					<!-- 我们将 Grid 用作根，原因在于这便于添加更多的元素来自定义按钮 -->
+					<!-- 我们将 Grid 用作根，原因在于这便于添加更多的元素来自定义按钮 -->
+					<Grid x:Name="Grid" Background="#FB3D3D3D">
+						
+						<!-- Content Presenter 是控件放置文本内容等项之处 -->
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="CommonStates">
+								<VisualState x:Name="Normal"/>
+								<VisualState x:Name="MouseOver"/>
+								<VisualState x:Name="Pressed"/>
+								<VisualState x:Name="Disabled"/>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+						<Border x:Name="Border" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" Margin="-19,-17,-19,-21">
+							<Border.Background>
+								<ImageBrush ImageSource="images/add.png"/>
+							</Border.Background>
+						</Border>
+						
+						<!-- 通过利用绑定，无需编辑模板即可将控件参数化 -->
+						<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+					</Grid>
+					
+					<!--每种状态都基于模板中的 Border 来设置画笔 -->
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="true">
+							<Trigger.ExitActions>
+								<StopStoryboard BeginStoryboardName="Storyboard1_BeginStoryboard"/>
+							</Trigger.ExitActions>
+							<Trigger.EnterActions>
+								<BeginStoryboard x:Name="Storyboard1_BeginStoryboard" Storyboard="{StaticResource Storyboard1}"/>
+							</Trigger.EnterActions>
+							<Setter Property="Background" TargetName="Border">
+								<Setter.Value>
+									<ImageBrush ImageSource="images/addOver.png"/>
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="myTextBoxStyle" TargetType="{x:Type TextBox}">
+		<Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="AllowDrop" Value="true"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type TextBox}">
+					<Grid>
+						<Border x:Name="Border" BorderThickness="1" Padding="2" CornerRadius="2" BorderBrush="Gray" Background="#FF282828">
+							
+							<!-- 实现时会将 Content 置于 ScrollViewer 中。必须将其命名为 PART_ContentHost，控件才能起作用 -->
+							<ScrollViewer Margin="0" x:Name="PART_ContentHost" Style="{DynamicResource SimpleScrollViewer}"/>
+						
+						</Border>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Background" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+							<Setter Property="BorderBrush" Value="{DynamicResource DisabledBackgroundBrush}" TargetName="Border"/>
+							<Setter Property="Foreground" Value="{DynamicResource DisabledForegroundBrush}"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
 	
 </ResourceDictionary>
