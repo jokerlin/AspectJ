@@ -21,12 +21,16 @@ namespace aspectJ
             {
                 RunCmd(@"compile.bat");  //运行compile.bat文件ajc编译
                 RunCmd(@"excution.bat");  //运行excution.bat文件java执行
-                return 0;
+                string projectpath = ReadProjectFile().Item1;
+                Movefile(projectpath + @"\CallInterceptor.aj", "CallInterceptor.aj");
+                Movefile(projectpath + @"\CallLogger.java", "CallLogger.java");
+                Movefile(projectpath + @"\calls.txt", "calls.txt");
             }
-            else 
+            else
             {
                 return -1;
             }
+            //RunCmd(@"compile.bat");
             //Process p = new Process();
             //p.StartInfo.FileName = @"C:\Users\linheng\Documents\aspectJ\aspectJ\bin\Debug\excution.bat"; //bat文件路径
             //p.StartInfo.UseShellExecute = false;
@@ -35,6 +39,7 @@ namespace aspectJ
             //p.StartInfo.RedirectStandardOutput = true;
             //p.Start();
             //Console.ReadKey();
+            return 0;
         }
         /// <summary>
         /// 读取ajcprofile.ini
@@ -74,6 +79,7 @@ namespace aspectJ
             var project = new Tuple<string, string>(projectFilePath, projectMain);
             return project;
         }
+
         /// <summary>
         /// 生成bat文件
         /// </summary>
@@ -86,8 +92,14 @@ namespace aspectJ
                 string path = ReadJavaProFile();
                 string projectpath = ReadProjectFile().Item1;
                 string projectMain = ReadProjectFile().Item2;
-                string ins_ajc = @"ajc -1.7 -classpath " + classpath + @"\lib\aspectjrt.jar " + projectpath + @"\*.aj " + projectpath + @"\*.java";
-                string ins_java = "\"" + path + "\\java.exe\"  -classpath " + classpath + @"\lib\aspectjrt.jar;" + projectpath + @"\ " + projectMain;
+
+                //移动文件
+                Movefile("CallInterceptor.aj", projectpath + @"\CallInterceptor.aj");
+                Movefile("CallLogger.java", projectpath + @"\CallLogger.java");
+
+                string ins_ajc = @"ajc -1.7 -classpath " + classpath + @"\lib\aspectjrt.jar """ + projectpath + @"\*.aj"" """ + projectpath + @"\*.java""";
+                //string ins_java = "\"" + path + "\\java.exe\"  -classpath " + classpath + @"\lib\aspectjrt.jar;""" + projectpath + @"\"" " + projectMain;
+                string ins_java = "\"" + path + "\\java.exe\"  -classpath " + classpath + @"\lib\aspectjrt.jar;""" + projectpath + @""" " + projectMain;
                 string strWriteFilePath = (@"compile.bat");
                 StreamWriter srWriteFile = new StreamWriter(strWriteFilePath);
                 string strWriteFilePath2 = (@"excution.bat");
@@ -101,6 +113,8 @@ namespace aspectJ
                 //srWriteFile2.WriteLine("pause");
                 srWriteFile.Close();
                 srWriteFile2.Close();
+
+                    
                 return 0;
             }
             catch
@@ -131,6 +145,15 @@ namespace aspectJ
             sOut.Close();
             //proc.Close();
             //return results;
+        }
+
+        private void Movefile(string sourceFile, string destinationFile)
+        {
+            try
+            {
+                System.IO.File.Move(sourceFile, destinationFile);
+            }
+            catch { }
         }
     }
 }
