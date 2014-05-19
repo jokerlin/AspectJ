@@ -8,6 +8,8 @@ namespace aspectJ
     class Advice
     {
         public string adviceName;
+        public string advicePointcutName;
+        public string advicePointcutKind;
         public string adviceCode;
         public string adviceString;
     }
