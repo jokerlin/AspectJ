@@ -22,6 +22,7 @@ namespace aspectJ
             newPointcut.pointcutKind = pointcutKind;
             newPointcut.regex = regex;
             string pointcutString = returnValue + " pointcut " + pointcutName + "(): " + pointcutKind + "(" + regex + ")\n";
+            newPointcut.pointcutString = pointcutString;
             pointcuts.Add(newPointcut);
         }
 
