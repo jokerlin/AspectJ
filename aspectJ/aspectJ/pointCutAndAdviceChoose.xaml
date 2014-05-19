@@ -6,7 +6,7 @@
     x:Class="aspectJ.pointCutAndAdviceChoose"
 	x:Name="Window"
 	Title="pointCutAndAdviceChoose"
-	Width="663.167" Height="518.167" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}">
+	Width="663.167" Height="435.167" WindowStartupLocation="CenterScreen" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}">
 
 	<Window.Resources>
 		<local:PointCutInfo x:Key="PointCutInfoDataSource" d:IsDataSource="True"/>
@@ -14,9 +14,9 @@
 	</Window.Resources>
 
 	<Grid x:Name="LayoutRoot">
-		<Rectangle Fill="#FF181818" Margin="0,2.667,0,0" RadiusY="6" RadiusX="6" Opacity="0.945"/>
+		<Rectangle Fill="#FF181818" Margin="0,0,0,2.667" RadiusY="6" RadiusX="6" Opacity="0.945"/>
 		<Rectangle Fill="#FF8C8E94" HorizontalAlignment="Left" Height="92.602" Margin="6.083,27.6,0,0" VerticalAlignment="Top" Width="115.333"/>
-		<TabControl Margin="4.5,25,3.5,38.333" Background="#FF3D3D3D" BorderBrush="{x:Null}">
+		<TabControl Margin="4.5,25,3.5,59.833" Background="#FF3D3D3D" BorderBrush="{x:Null}">
 			<TabItem Header="PointCut" Style="{DynamicResource TabItemStyle1}" Foreground="#FFCDCDCD" Margin="-2,-1.333,-2,-1.666">
 				<Grid Background="#FF3D3D3D" d:LayoutOverrides="VerticalMargin">
 					<Rectangle Fill="#FF3D3D3D" VerticalAlignment="Top" Margin="0,-0.5,0,0"/>
@@ -41,11 +41,15 @@
 					</RichTextBox>
 					<Button x:Name="addButton1" Content="添加" HorizontalAlignment="Right" Height="23" Margin="0,13,121,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55" Click="addButton1_Click" />
 					<Button x:Name="editButton1" Content="编辑" HorizontalAlignment="Right" Height="23" Margin="0,13,62,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55" Click="editButton1_Click" />
-					<Button x:Name="deleteButton_Copy" Content="删除" HorizontalAlignment="Right" Height="23" Margin="0,13,3,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55" />
+					<Button x:Name="deleteButton1" Content="删除" HorizontalAlignment="Right" Height="23" Margin="0,13,3,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55" Click="deleteButton1_Click" />
 				</Grid>
 			</TabItem>
 		</TabControl>
 		<TextBlock HorizontalAlignment="Left" Height="15.332" Margin="6,5.667,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75.667" Foreground="#FF878787" ><Run Language="zh-cn" Text="切面代码管理"/></TextBlock>
-		<Button x:Name="Button" Content="关闭" Height="22.665" Margin="0,0,8,8" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" Click="Button_Click" BorderBrush="#FF707070" RenderTransformOrigin="-1.023,0.728" HorizontalAlignment="Right" Width="79.333"/>
+		<Button x:Name="Button" Content="关闭" Height="23" Margin="0,0,13,8" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" Click="Button_Click" BorderBrush="#FF707070" RenderTransformOrigin="-1.023,0.728" HorizontalAlignment="Right" Width="79"/>
+		<Rectangle Fill="#FF3D3D3D" Height="49.916" Margin="6.5,0,0,5.917" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="313.5" RadiusY="3.5" RadiusX="3.5"/>
+		<TextBlock HorizontalAlignment="Left" Height="15.332" Margin="10.668,0,0,39.501" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="75.667" Foreground="#FFA7A3A3" ><Run Language="zh-cn" Text="切面代码名称"/></TextBlock>
+		<TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="22.665" Margin="10.001,0,0,11.836" Style="{DynamicResource TextBoxStyle1}" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="203.666" RenderTransformOrigin="-0.71,0.752" Background="#FF282828" BorderBrush="{x:Null}" Foreground="#FFD6D6D6"/>
+		<Button x:Name="generateButton" Content="生成代码" Height="22.665" Margin="232.334,0,0,11.836" VerticalAlignment="Bottom"  Style="{DynamicResource ButtonStyle2}" HorizontalAlignment="Left" Width="79.333" RenderTransformOrigin="0.464,1.089" Click="generateButton_Click"/>
 	</Grid>
 </Window>

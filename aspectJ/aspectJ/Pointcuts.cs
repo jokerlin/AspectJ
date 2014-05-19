@@ -21,7 +21,6 @@ namespace aspectJ
             newPointcut.pointcutName = pointcutName;
             newPointcut.pointcutKind = pointcutKind;
             newPointcut.regex = regex;
-            string pointcutString = returnValue + " pointcut " + pointcutName + "(): " + pointcutKind + "(" + regex + ")\n";
             pointcuts.Add(newPointcut);
         }
 
@@ -33,6 +32,11 @@ namespace aspectJ
             newPointcut.pointcutName = pointcutName;
             newPointcut.pointcutKind = pointcutKind;
             newPointcut.regex = regex;
+        }
+        public static string getCode(int index)
+        {
+            string pointcutCode = pointcuts[index].returnValue + " pointcut " + pointcuts[index].pointcutName + "(): " + pointcuts[index].pointcutKind + "(" + pointcuts[index].regex + ")\n";
+            return pointcutCode;
         }
         public static Pointcut getPointcuts(int index)
         {

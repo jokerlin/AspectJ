@@ -94,7 +94,7 @@
             </Grid.ColumnDefinitions>
             <Rectangle Fill="#FF232323" Margin="8,0,8,-12.5" RadiusY="4.5" RadiusX="4.5" Stroke="Black" Height="24" VerticalAlignment="Bottom" Grid.ColumnSpan="2"/>
 			<Rectangle Fill="#FF3C3C3C" Margin="0,17,0,-0.5" RadiusY="4.5" RadiusX="4.5" Grid.ColumnSpan="2"/>
-			<Button x:Name="acceptButton_Copy1" Content="编译执行" HorizontalAlignment="Left" Margin="149.009,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="61"/>
+			<Button x:Name="doButton" Content="编译执行" HorizontalAlignment="Left" Margin="149.009,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="61" Click="doButton_Click"/>
 			<Button x:Name="functionDropButton" Content="调用关系" HorizontalAlignment="Left" Margin="210.009,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="61" Click="functionDropButton_Click"/>
 			<Button x:Name="openButton" Content="打开" HorizontalAlignment="Left" Margin="5.331,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="60" Click="openButton_Click"/>
 			<Button x:Name="cutOpenButton" Content="切面代码管理" Margin="66,18.5,0,0" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Left" Width="79.009" Click="cutOpenButton_Click"/>
@@ -104,7 +104,7 @@
 				<DropShadowEffect/>
 			</Rectangle.Effect>
 		</Rectangle>
-		<Label Content="切面代码" HorizontalAlignment="Left" Height="28.165" Margin="205,48.835,0,0" VerticalAlignment="Top" Width="68" Foreground="White"/>
+		<Label Content="源码代码" HorizontalAlignment="Left" Height="28.165" Margin="205,48.835,0,0" VerticalAlignment="Top" Width="68" Foreground="White"/>
 		<TabControl HorizontalAlignment="Left" Margin="14.5,54.167,0,15.625" Width="172" Style="{DynamicResource TabControlStyle1}" Background="#FF595959" BorderBrush="{x:Null}">
 			<TabItem Header="源码列表" Style="{DynamicResource TabItemStyle1}" Foreground="#FFF0F0F0">
 				<Grid Background="#FFE5E5E5">
@@ -115,7 +115,7 @@
 					<ListBox x:Name="srcList" Background="#FF282828" Grid.ColumnSpan="2"/>
                 </Grid>
 			</TabItem>
-			<TabItem Header="函数列表" Style="{DynamicResource TabItemStyle1}" Foreground="#FFF0F0F0">
+			<TabItem Header="函数列表" Style="{DynamicResource TabItemStyle1}" Foreground="#FFF0F0F0" Visibility="Hidden">
 				<Grid Background="#FF2F2F2F">
 					<ListBox Margin="0,-0.504,0,185.375" SelectionMode="Multiple" Background="#FF282828">
 						<ListBoxItem Content="MainFunction" Style="{DynamicResource ListBoxItemStyle2}"/>

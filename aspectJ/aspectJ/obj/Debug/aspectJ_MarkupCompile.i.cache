@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\wpf\aspectj\AspectJ\aspectJ\aspectJ\obj\Debug\
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\
 aspectJ
 none
 false
 DEBUG;TRACE
-D:\wpf\aspectj\AspectJ\aspectJ\aspectJ\App.xaml
+D:\wpf\aspectj\aspectj\aspectJ\aspectJ\App.xaml
 12434982278
 
-271761128653
+28-1595689682
 171399205524
 addAdvice.xaml;addPoint.xaml;codeWindow.xaml;elementBox.xaml;FunctionChoose.xaml;LoadingWindow.xaml;MainWindow.xaml;pointCutAndAdviceChoose.xaml;ResourceDictionary.xaml;Simple Styles.xaml;theMainWindow.xaml;treeGraph.xaml;
 
-True
+False
 

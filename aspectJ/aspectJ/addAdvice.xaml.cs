@@ -19,6 +19,7 @@ namespace aspectJ
 	public partial class addAdvice : Window
 	{
         ObservableCollection<PointCutInfo> pointCutList = new ObservableCollection<PointCutInfo>();
+        public int index = -1;
         public addAdvice()
 		{
 			this.InitializeComponent();
@@ -53,7 +54,10 @@ namespace aspectJ
             kcb = (ComboBoxItem)kindComboBox.SelectedItem;
             string code = textBox.Text;
             //string code = System.Windows.Markup.XamlWriter.Save(richTextBox.Document);
-            Advices.AddAdvice(kcb.Content.ToString(), pccb.Name, code);
+            if (index == -1)
+                Advices.AddAdvice(kcb.Content.ToString(), pccb.Name, code);
+            else
+                Advices.EditAdvice(index, kcb.Content.ToString(), pccb.Name, code);
             this.Close();
         }
 	}

@@ -84,7 +84,7 @@ namespace aspectJ
             if (index == -1) return;
             FlowDocument doc = new FlowDocument();
             Paragraph p = new Paragraph();
-            Run r = new Run(Pointcuts.getPointcutName(index));
+            Run r = new Run(Pointcuts.getCode(index));
             p.Inlines.Add(r);
             doc.Blocks.Add(p);
             pointCutRichTextBox.Document = doc;
@@ -104,7 +104,7 @@ namespace aspectJ
             if (index == -1) return;
             addPoint ap = new addPoint();
             ap.Owner = this;
-
+            
             Pointcut pointcut = new Pointcut();
             pointcut = Pointcuts.pointcuts[index];
 
@@ -177,13 +177,42 @@ namespace aspectJ
             if (index == -1) return;
             addAdvice aa = new addAdvice();
             aa.Owner = this;
-            aa.ShowDialog();
+            aa.index = index;
 
             Advice ad = new Advice();
             ad = Advices.getAdvices(index);
+            int i;
+            for (i = 0; i < Pointcuts.pointcuts.Count; i++)
+            {
+                if (Pointcuts.pointcuts[i].pointcutName == ad.advicePointcutName)
+                {
+                    break;
+                }
+            }
+            if (i < Pointcuts.pointcuts.Count) aa.pointCutComboBox.SelectedIndex = i;
+            if (ad.advicePointcutKind == "before") 
+                aa.kindComboBox.SelectedIndex = 0;
+            else
+                aa.kindComboBox.SelectedIndex = 1;
 
+            aa.textBox.Text = ad.adviceCode;
+
+            aa.ShowDialog();
             updataAdvice();
 
+        }
+
+        private void deleteButton1_Click(object sender, RoutedEventArgs e)
+        {
+            int index = adviceComboBox.SelectedIndex;
+            if (index == -1) return;
+            Advices.delAdviceByIndex(index);
+            updataAdvice();
+        }
+
+        private void generateButton_Click(object sender, RoutedEventArgs e)
+        {
+            //AspectGeneration.GenerateAspectCode(Pointcuts.pointcuts,
         }
         
 	}

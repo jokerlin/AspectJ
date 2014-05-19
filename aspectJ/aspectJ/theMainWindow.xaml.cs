@@ -98,5 +98,10 @@ namespace aspectJ
             pcaac.ShowDialog();
             // 在此处添加事件处理程序实现。
         }
+
+        private void doButton_Click(object sender, RoutedEventArgs e)
+        {
+            //GenerateAJFile.generateAJFile();
+        }
 	}
 }
