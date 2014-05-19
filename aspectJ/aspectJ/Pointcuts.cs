@@ -1,4 +1,5 @@
-﻿using System;
+﻿using aspectJ;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,36 +9,34 @@ namespace GenerateAspect
 {
     class Pointcuts
     {
-        public static List<string> pointcuts;
-        public static List<string> pointcutNames;
+        public static List<Pointcut> pointcuts;
+        //public static List<string> pointcutNames;
 
         public static void Pointcuts() {
-            pointcuts = new List<string>();
-            pointcutNames = new List<string>();
+            pointcuts = new List<Pointcut>();
         }
         public static void AddPointcut(string returnValue, string pointcutName, string pointcutKind, string regex) {
+            Pointcut newPointcut = new Pointcut();
+            newPointcut.returnValue = returnValue;
+            newPointcut.pointcutName = pointcutName;
+            newPointcut.pointcutKind = pointcutKind;
+            newPointcut.regex = regex;
             string pointcutString = returnValue + " pointcut " + pointcutName + "(): " + pointcutKind + "(" + regex + ")\n";
-            pointcutNames.Add(pointcutName);
-            pointcuts.Add(pointcutString);
+            pointcuts.Add(newPointcut);
         }
-        public static string getPointcuts(int index)
+        public static Pointcut getPointcuts(int index)
         {
             return pointcuts[index];
         }
 
         public static string getPointcutName(int index)
         {
-            return pointcutNames[index];
+            return pointcuts[index].pointcutName;
         }
 
         public static void delPointcutByIndex(int index)
         {
             pointcuts.RemoveAt(index);
-        }
-
-        public static List<string> getPointcutNames()
-        {
-            return pointcutNames;
         }
     }
 }
