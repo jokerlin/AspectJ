@@ -94,10 +94,10 @@
             </Grid.ColumnDefinitions>
             <Rectangle Fill="#FF232323" Margin="8,0,8,-12.5" RadiusY="4.5" RadiusX="4.5" Stroke="Black" Height="24" VerticalAlignment="Bottom" Grid.ColumnSpan="2"/>
 			<Rectangle Fill="#FF3C3C3C" Margin="0,17,0,-0.5" RadiusY="4.5" RadiusX="4.5" Grid.ColumnSpan="2"/>
-			<Button x:Name="acceptButton_Copy1" Content="执行" HorizontalAlignment="Left" Margin="131,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="61"/>
-			<Button x:Name="functionDropButton" Content="调用关系" HorizontalAlignment="Left" Margin="192,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="61" Click="functionDropButton_Click"/>
-			<Button x:Name="openButton" Content="打开" HorizontalAlignment="Left" Margin="10,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="60" Click="openButton_Click"/>
-			<Button x:Name="acceptButton_Copy" Content="编译" HorizontalAlignment="Left" Margin="70,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="61"/>
+			<Button x:Name="acceptButton_Copy1" Content="编译执行" HorizontalAlignment="Left" Margin="149.009,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="61"/>
+			<Button x:Name="functionDropButton" Content="调用关系" HorizontalAlignment="Left" Margin="210.009,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="61" Click="functionDropButton_Click"/>
+			<Button x:Name="openButton" Content="打开" HorizontalAlignment="Left" Margin="5.331,19,0,-0.5" Style="{DynamicResource ButtonStyle1}" Width="60" Click="openButton_Click"/>
+			<Button x:Name="cutOpenButton" Content="切面代码管理" Margin="66,18.5,0,0" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Left" Width="79.009" Click="cutOpenButton_Click"/>
 		</Grid>
 		<Rectangle Fill="#FF3C3C3C" Stroke="Black" RadiusX="7" RadiusY="7" Margin="8,45.5,7.172,8">
 			<Rectangle.Effect>

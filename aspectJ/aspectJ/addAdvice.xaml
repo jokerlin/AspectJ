@@ -5,40 +5,22 @@
 	x:Class="aspectJ.addAdvice"
 	x:Name="Window"
 	Title="addAdvice"
-	Width="446" Height="318" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}">
+	Width="446" Height="318" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" WindowStartupLocation="CenterOwner">
 
 	<Grid x:Name="LayoutRoot">
 		<Rectangle Fill="#FF181818" Margin="8" RadiusY="6" RadiusX="6" Opacity="0.945"/>
 		<Label Content="添加 advice" HorizontalAlignment="Left" Height="25.657" Margin="8,8,0,0" VerticalAlignment="Top" Width="87" Foreground="Gray"/>
 		<RichTextBox x:Name="richTextBox" Margin="8,81,8,44.665" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9"  >
-			<FlowDocument>
-				<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" int myArray[];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray=new int[10];"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" System.out.println(&quot;Index\t\tValue&quot;);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" for(int i=0; i&lt;myArray.length;i++)"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" &#x9;System.out.println(i+&quot;\t\t&quot;+myArray[i]);"/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=""/></Paragraph>
-				<Paragraph><Run Language="zh-cn" Text=" myArray[10]=100; "/></Paragraph>
-			</FlowDocument>
-		</RichTextBox>
-		<ComboBox Height="27.5" Style="{DynamicResource ComboBoxStyle1}" VerticalAlignment="Top" Foreground="#FFCDCDCD" Margin="76.013,38.322,171.654,0">
-			<ComboBoxItem Content="hello" Style="{DynamicResource ComboBoxItemStyle1}"/>
-			<ComboBoxItem Content="world" Style="{DynamicResource ComboBoxItemStyle1}"/>
-		</ComboBox>
-		<Label Content="选择切点" Height="28.165" Margin="16.013,37.657,0,0" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Left" Width="56" FontSize="10.667"/>
+            <FlowDocument/>
+        </RichTextBox>
+		<ComboBox x:Name="pointCutComboBox" Height="27.5" Style="{DynamicResource ComboBoxStyle1}" VerticalAlignment="Top" Foreground="#FFCDCDCD" Margin="76.013,38.322,171.654,0"/>
+        <Label Content="选择切点" Height="28.165" Margin="16.013,37.657,0,0" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Left" Width="56" FontSize="10.667"/>
 		<ComboBox Height="27.5" Style="{DynamicResource ComboBoxStyle1}" VerticalAlignment="Top" Foreground="#FFCDCDCD" Margin="0,38.987,18.987,0" HorizontalAlignment="Right" Width="76.333">
 			<ComboBoxItem Content="before" Style="{DynamicResource ComboBoxItemStyle1}"/>
 			<ComboBoxItem Content="after" Style="{DynamicResource ComboBoxItemStyle1}"/>
 		</ComboBox>
 		<Label Content="选择位置" Height="28.165" Margin="0,38.322,100.994,0" VerticalAlignment="Top" Foreground="White" FontSize="10.667" HorizontalAlignment="Right" Width="56"/>
-		<Button x:Name="acceptButton" Content="确定" Height="22.665" Margin="109.68,0,0,13" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" BorderBrush="#FF707070" HorizontalAlignment="Left" Width="79.333"/>
-		<Button x:Name="cancelButton" Content="取消" HorizontalAlignment="Right" Height="22.665" Margin="0,0,100.994,13" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" Width="79.333"/>
+		<Button x:Name="acceptButton" Content="确定" Height="22.665" Margin="109.68,0,0,13" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" BorderBrush="#FF707070" HorizontalAlignment="Left" Width="79.333" Click="acceptButton_Click"/>
+		<Button x:Name="cancelButton" Content="取消" HorizontalAlignment="Right" Height="22.665" Margin="0,0,100.994,13" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" Width="79.333" Click="cancelButton_Click"/>
 	</Grid>
 </Window>

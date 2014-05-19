@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 
 namespace aspectJ
 {
@@ -17,11 +18,140 @@ namespace aspectJ
 	/// </summary>
 	public partial class pointCutAndAdviceChoose : Window
 	{
-		public pointCutAndAdviceChoose()
+        ObservableCollection<PointCutInfo> pointCutList=new ObservableCollection<PointCutInfo>();
+        public pointCutAndAdviceChoose()
 		{
 			this.InitializeComponent();
-			
+            pointCutList.Clear();
+            this.pointCutComboBox.ItemsSource = pointCutList;
+            this.pointCutComboBox.DisplayMemberPath = "Name";
+            this.pointCutComboBox.SelectedValuePath = "ID";
+            updata();
+            // pointCuts.Clear();
+            //this.pointCutComboBox.
+            //pointCutList.Add(pc);
+            
+
 			// 在此点之下插入创建对象所需的代码。
 		}
+
+        public void updata()
+        {
+            pointCutList.Clear();
+            List<Pointcut> List = new List<Pointcut>();
+            List = Pointcuts.pointcuts;
+            for (int i = 0; i < List.Count; i++)
+            {
+                PointCutInfo pc = new PointCutInfo(); ;
+                pc.ID = i;
+                pc.Name = List[i].pointcutName;
+                pointCutList.Add(pc);
+            }
+        }
+
+        
+
+		private void addButton1_Click(object sender, System.Windows.RoutedEventArgs e)
+		{
+			addAdvice aa=new addAdvice();
+			aa.Owner=this;
+			aa.ShowDialog();// 在此处添加事件处理程序实现。
+		}
+
+        private void richTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void pointCutComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = pointCutComboBox.SelectedIndex;
+            if (index == -1) return;
+            FlowDocument doc = new FlowDocument();
+            Paragraph p = new Paragraph();
+            Run r = new Run(Pointcuts.getPointCutCode(index));
+            p.Inlines.Add(r);
+            doc.Blocks.Add(p);
+            pointCutRichTextBox.Document = doc;
+        }
+
+        private void deleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            int index = pointCutComboBox.SelectedIndex;
+            if (index == -1) return;
+            Pointcuts.delPointcutByIndex(index);
+            updata();
+        }
+
+        private void editButton_Click(object sender, RoutedEventArgs e)
+        {
+            int index = pointCutComboBox.SelectedIndex;
+            if (index == -1) return;
+            addPoint ap = new addPoint();
+            ap.Owner = this;
+
+            Pointcut pointcut = new Pointcut();
+            pointcut = Pointcuts.pointcuts[index];
+
+            ap.pointCutTextBox.Text = pointcut.pointcutName;
+            switch (pointcut.returnValue)
+            {
+                case "public": ap.returnValueCombox.SelectedIndex = 0;
+                    break;
+                case "private": ap.returnValueCombox.SelectedIndex = 1;
+                    break;
+            }
+            switch (pointcut.pointcutKind)
+            {
+                case "Call": ap.pointCutKindCombox.SelectedIndex = 0;
+                    break;
+                case "Execution": ap.pointCutKindCombox.SelectedIndex = 1;
+                    break;
+                case "Target": ap.pointCutKindCombox.SelectedIndex = 2;
+                    break;
+                case "Args": ap.pointCutKindCombox.SelectedIndex = 3;
+                    break;
+                case "Within": ap.pointCutKindCombox.SelectedIndex = 4;
+                    break;
+                case "Cflow": ap.pointCutKindCombox.SelectedIndex = 5;
+                    break;
+            }
+            ap.regexBox.Text = pointcut.regex;
+            ap.Label.Content = "编辑 pointCut";
+            ap.index = index;
+            ap.ShowDialog();
+            updata();
+        }
+
+        private void addButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            addPoint ap = new addPoint();
+            ap.Owner = this;
+            ap.ShowDialog();// 在此处添加事件处理程序实现。
+            updata();
+        }
+
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+        	this.Close();// 在此处添加事件处理程序实现。
+        }
+        
 	}
+
+    public class PointCutInfo 
+    {
+        public int ID
+        {
+            get; 
+            set;
+        }
+
+        public string Name
+        {
+            get;
+            set;
+        }
+    }
+
+    
 }

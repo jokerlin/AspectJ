@@ -91,5 +91,12 @@ namespace aspectJ
                 
             }
         }
+
+        private void cutOpenButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            pointCutAndAdviceChoose pcaac = new pointCutAndAdviceChoose();
+            pcaac.ShowDialog();
+            // 在此处添加事件处理程序实现。
+        }
 	}
 }
