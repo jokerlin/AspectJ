@@ -20,6 +20,8 @@ namespace aspectJ
             Advice advice = new Advice();
             advice.adviceName = AdviceKind + " : " + pointcutName + "()";
             advice.adviceCode = adviceCode;
+            advice.advicePointcutKind = AdviceKind;
+            advice.advicePointcutName = pointcutName;
             string AdviceString = advice.adviceName + "{\n" + advice.adviceCode + "\n}\n";
             advice.adviceString = AdviceString;
 
@@ -31,6 +33,8 @@ namespace aspectJ
         {
             advices[index].adviceName = AdviceKind + " : " + pointcutName + "()";
             advices[index].adviceCode = adviceCode;
+            advices[index].advicePointcutKind = AdviceKind;
+            advices[index].advicePointcutName = pointcutName;
             string AdviceString = advices[index].adviceName + "{\n" + advices[index].adviceCode + "\n}\n";
             advices[index].adviceString = AdviceString;
         }
