@@ -25,6 +25,7 @@ namespace aspectJ
                 Movefile(projectpath + @"\CallInterceptor.aj", "CallInterceptor.aj");
                 Movefile(projectpath + @"\CallLogger.java", "CallLogger.java");
                 Movefile(projectpath + @"\calls.txt", "calls.txt");
+                Movefile(projectpath + @"\sources.list", "sources.list");
             }
             else
             {
@@ -86,30 +87,47 @@ namespace aspectJ
         /// <returns>0==>Success,-1==>Fail</returns>
         private int WriteCompileFile()
         {
+            string ins_ajc;
+            string ins_java;
             try
             {
                 string classpath = ReadAJCProFile();
                 string path = ReadJavaProFile();
                 string projectpath = ReadProjectFile().Item1;
                 string projectMain = ReadProjectFile().Item2;
+                
+                if (projectpath.IndexOf("Fish") > -1)
+                {
+                    //移动文件
+                    Movefile("CallInterceptor.aj", projectpath + @"\CallInterceptor.aj");
+                    Movefile("CallLogger.java", projectpath + @"\CallLogger.java");
+                    Movefile("sources.list", projectpath + @"\sources.list");
 
-                //移动文件
-                Movefile("CallInterceptor.aj", projectpath + @"\CallInterceptor.aj");
-                Movefile("CallLogger.java", projectpath + @"\CallLogger.java");
+                    ins_ajc = @"ajc -d tmp @sources.list -cp ""lib\dom4j-1.6.1.jar;lib\kxml2.jar;lib\xmlpull_1_1_3_4c.jar;lib\jl1.0.jar;lib\jogg-0.0.7.jar;lib\jorbis-0.0.15.jar;lib\mp3spi1.9.4.jar;lib\tritonus_jorbis-0.3.6.jar;lib\tritonus_share.jar;C:\aspectj1.7\lib\aspectjrt.jar"" -1.7";
+                    ins_java = @"java -cp tmp;lib\dom4j-1.6.1.jar;lib\kxml2.jar;lib\xmlpull_1_1_3_4c.jar;lib\jl1.0.jar;lib\jogg-0.0.7.jar;lib\jorbis-0.0.15.jar;lib\mp3spi1.9.4.jar;lib\tritonus_jorbis-0.3.6.jar;lib\tritonus_share.jar;C:\aspectj1.7\lib\aspectjrt.jar com.mypro.basecomponet.AwtMainComponet";
 
-                string ins_ajc = @"ajc -1.7 -classpath " + classpath + @"\lib\aspectjrt.jar """ + projectpath + @"\*.aj"" """ + projectpath + @"\*.java""";
-                //string ins_java = "\"" + path + "\\java.exe\"  -classpath " + classpath + @"\lib\aspectjrt.jar;""" + projectpath + @"\"" " + projectMain;
-                string ins_java = "\"" + path + "\\java.exe\"  -classpath " + classpath + @"\lib\aspectjrt.jar;""" + projectpath + @""" " + projectMain;
-                string strWriteFilePath = (@"compile.bat");
-                StreamWriter srWriteFile = new StreamWriter(strWriteFilePath);
-                string strWriteFilePath2 = (@"excution.bat");
-                StreamWriter srWriteFile2 = new StreamWriter(strWriteFilePath2);
-                srWriteFile.WriteLine(projectpath.Substring(0,2));
-                srWriteFile.WriteLine(@"cd " + projectpath);
-                srWriteFile.WriteLine(ins_ajc);
-                srWriteFile2.WriteLine(projectpath.Substring(0, 2));
-                srWriteFile2.WriteLine(@"cd " + projectpath);
-                srWriteFile2.WriteLine(ins_java);
+                }
+                else
+                {
+                    //移动文件
+                    Movefile("CallInterceptor.aj", projectpath + @"\CallInterceptor.aj");
+                    Movefile("CallLogger.java", projectpath + @"\CallLogger.java");
+
+                    ins_ajc = @"ajc -1.7 -classpath " + classpath + @"\lib\aspectjrt.jar """ + projectpath + @"\*.aj"" """ + projectpath + @"\*.java""";
+                    //string ins_java = "\"" + path + "\\java.exe\"  -classpath " + classpath + @"\lib\aspectjrt.jar;""" + projectpath + @"\"" " + projectMain;
+                    ins_java = "\"" + path + "\\java.exe\"  -classpath " + classpath + @"\lib\aspectjrt.jar;""" + projectpath + @""" " + projectMain;
+                }
+                    string strWriteFilePath = (@"compile.bat");
+                    StreamWriter srWriteFile = new StreamWriter(strWriteFilePath);
+                    string strWriteFilePath2 = (@"excution.bat");
+                    StreamWriter srWriteFile2 = new StreamWriter(strWriteFilePath2);
+                    srWriteFile.WriteLine(projectpath.Substring(0, 2));
+                    srWriteFile.WriteLine(@"cd " + projectpath);
+                    srWriteFile.WriteLine(ins_ajc);
+                    srWriteFile2.WriteLine(projectpath.Substring(0, 2));
+                    srWriteFile2.WriteLine(@"cd " + projectpath);
+                    srWriteFile2.WriteLine(ins_java);
+                
                 //srWriteFile2.WriteLine("pause");
                 srWriteFile.Close();
                 srWriteFile2.Close();
