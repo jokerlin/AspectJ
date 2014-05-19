@@ -4,8 +4,10 @@ AspectJ
 ##软件体系架构与设计模式大作业
 
 ###添加的CompileAJ的类的使用方法
-CompileAJ compileAJ = new CompileAJ(filename);
-compileAJ.CompileAndRun();
+
+    CompileAJ compileAJ = new CompileAJ(filename);
+    compileAJ.CompileAndRun();
+
 其中，filename为生成aj的文件名（不带后缀）
 
 ###GetCalls的返回值
