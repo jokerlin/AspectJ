@@ -1,4 +1,5 @@
-﻿using System;
+﻿using aspectJ;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,17 +9,25 @@ namespace GenerateAspect
 {
     class Advices
     {
-        public static List<string> advices;
+        public static List<Advice> advices;
 
-        public static void AddAdvice(string AdviceKind, string pointcutName)
+        public void Advices()
         {
-            string AdviceString = AdviceKind + " : " + pointcutName + "() {\n}";
-            advices = new List<string>();
-            advices.Add(AdviceString);
+            advices = new List<Advice>();
+        }
+        public static void AddAdvice(string AdviceKind, string pointcutName, string adviceCode)
+        {
+            Advice advice = new Advice();
+            advice.adviceName = AdviceKind + " : " + pointcutName + "()";
+            advice.adviceCode = adviceCode;
+            string AdviceString = advice.adviceName + "{\n" + advice.adviceCode + "\n}\n";
+            advice.adviceString = AdviceString;
+
+            advices.Add(advice);
 
         }
 
-        public static string getAdvices(int index)
+        public static Advice getAdvices(int index)
         {
             return advices[index];
         }
