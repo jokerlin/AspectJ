@@ -35,12 +35,12 @@
 						<ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 					<Rectangle Fill="#FF3D3D3D" VerticalAlignment="Top"/>
-					<ComboBox HorizontalAlignment="Left" Height="28" Style="{DynamicResource ComboBoxStyle1}" VerticalAlignment="Top" Width="229" Foreground="#FFCDCDCD" Margin="0,8,0,0"/>
-					<RichTextBox x:Name="richTextBox_Copy" Margin="0,40,0,-1" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9"  >
+					<ComboBox x:Name="adviceComboBox" HorizontalAlignment="Left" Height="28" Style="{DynamicResource ComboBoxStyle1}" VerticalAlignment="Top" Width="229" Foreground="#FFCDCDCD" Margin="0,8,0,0" SelectionChanged="adviceComboBox_SelectionChanged"/>
+					<RichTextBox x:Name="adviceRichTextBox" Margin="0,40,0,-1" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9"  >
 						<FlowDocument/>
 					</RichTextBox>
 					<Button x:Name="addButton1" Content="添加" HorizontalAlignment="Right" Height="23" Margin="0,13,121,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55" Click="addButton1_Click" />
-					<Button x:Name="editButton_Copy" Content="编辑" HorizontalAlignment="Right" Height="23" Margin="0,13,62,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55" />
+					<Button x:Name="editButton1" Content="编辑" HorizontalAlignment="Right" Height="23" Margin="0,13,62,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55" Click="editButton1_Click" />
 					<Button x:Name="deleteButton_Copy" Content="删除" HorizontalAlignment="Right" Height="23" Margin="0,13,3,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55" />
 				</Grid>
 			</TabItem>

@@ -139,7 +139,6 @@ D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.exe
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.pdb
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\LoadingWindow.baml
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\LoadingWindow.g.cs
-D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\aspectJ.csprojResolveAssemblyReference.cache
 Z:\repos\AspectJ\aspectJ\aspectJ\obj\Debug\LoadingWindow.baml
 Z:\repos\AspectJ\aspectJ\aspectJ\obj\Debug\LoadingWindow.g.cs
 D:\wpf\aspectj\aspectj\aspectJ\aspectJ\obj\Debug\pointCutAndAdviceChoose.baml
@@ -203,3 +202,4 @@ D:\wpf\aspectj\AspectJ2\aspectJ\aspectJ\bin\Debug\zh-Hant\System.Windows.Interac
 D:\wpf\aspectj\AspectJ2\aspectJ\aspectJ\obj\Debug\pointCutAndAdviceChoose.baml
 D:\wpf\aspectj\AspectJ2\aspectJ\aspectJ\obj\Debug\treeGraph.baml
 D:\wpf\aspectj\AspectJ2\aspectJ\aspectJ\obj\Debug\aspectJ.g.resources
+D:\wpf\aspectj\AspectJ\aspectJ\aspectJ\obj\Debug\aspectJ.csprojResolveAssemblyReference.cache

@@ -47,7 +47,14 @@ namespace aspectJ
 
         private void acceptButton_Click(object sender, RoutedEventArgs e)
         {
-
+            PointCutInfo pccb = new PointCutInfo();
+            pccb = (PointCutInfo)pointCutComboBox.SelectedItem;
+            ComboBoxItem kcb = new ComboBoxItem();
+            kcb = (ComboBoxItem)kindComboBox.SelectedItem;
+            string code = textBox.Text;
+            //string code = System.Windows.Markup.XamlWriter.Save(richTextBox.Document);
+            Advices.AddAdvice(kcb.Content.ToString(), pccb.Name, code);
+            this.Close();
         }
 	}
 }

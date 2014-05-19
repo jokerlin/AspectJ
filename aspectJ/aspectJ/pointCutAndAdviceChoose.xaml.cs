@@ -19,6 +19,7 @@ namespace aspectJ
 	public partial class pointCutAndAdviceChoose : Window
 	{
         ObservableCollection<PointCutInfo> pointCutList=new ObservableCollection<PointCutInfo>();
+        ObservableCollection<AdviceInfo> adviceList = new ObservableCollection<AdviceInfo>();
         public pointCutAndAdviceChoose()
 		{
 			this.InitializeComponent();
@@ -26,7 +27,13 @@ namespace aspectJ
             this.pointCutComboBox.ItemsSource = pointCutList;
             this.pointCutComboBox.DisplayMemberPath = "Name";
             this.pointCutComboBox.SelectedValuePath = "ID";
+
+            this.adviceComboBox.ItemsSource = adviceList;
+            this.adviceComboBox.DisplayMemberPath = "Name";
+            this.adviceComboBox.SelectedValuePath = "ID";
+            
             updata();
+            updataAdvice();
             // pointCuts.Clear();
             //this.pointCutComboBox.
             //pointCutList.Add(pc);
@@ -42,21 +49,29 @@ namespace aspectJ
             List = Pointcuts.pointcuts;
             for (int i = 0; i < List.Count; i++)
             {
-                PointCutInfo pc = new PointCutInfo(); ;
+                PointCutInfo pc = new PointCutInfo(); 
                 pc.ID = i;
                 pc.Name = List[i].pointcutName;
                 pointCutList.Add(pc);
             }
         }
 
+        public void updataAdvice()
+        {
+            adviceList.Clear();
+            List<Advice> List = new List<Advice>();
+            List = Advices.advices;
+            for (int i = 0; i < List.Count; i++)
+            {
+                AdviceInfo ad = new AdviceInfo();
+                ad.ID = i;
+                ad.Name = List[i].adviceName;
+                adviceList.Add(ad);
+            }
+        }
         
 
-		private void addButton1_Click(object sender, System.Windows.RoutedEventArgs e)
-		{
-			addAdvice aa=new addAdvice();
-			aa.Owner=this;
-			aa.ShowDialog();// 在此处添加事件处理程序实现。
-		}
+		
 
         private void richTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -135,6 +150,41 @@ namespace aspectJ
         {
         	this.Close();// 在此处添加事件处理程序实现。
         }
+
+        private void adviceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = adviceComboBox.SelectedIndex;
+            if (index == -1) return;
+            FlowDocument doc = new FlowDocument();
+            Paragraph p = new Paragraph();
+            Run r = new Run(Advices.advices[index].adviceString);
+            p.Inlines.Add(r);
+            doc.Blocks.Add(p);
+            adviceRichTextBox.Document = doc;
+        }
+
+        private void addButton1_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            addAdvice aa = new addAdvice();
+            aa.Owner = this;
+            aa.ShowDialog();// 在此处添加事件处理程序实现。
+            updataAdvice();
+        }
+
+        private void editButton1_Click(object sender, RoutedEventArgs e)
+        {
+            int index = adviceComboBox.SelectedIndex;
+            if (index == -1) return;
+            addAdvice aa = new addAdvice();
+            aa.Owner = this;
+            aa.ShowDialog();
+
+            Advice ad = new Advice();
+            ad = Advices.getAdvices(index);
+
+            updataAdvice();
+
+        }
         
 	}
 
@@ -153,5 +203,19 @@ namespace aspectJ
         }
     }
 
+    public class AdviceInfo
+    {
+        public int ID
+        {
+            get;
+            set;
+        }
+
+        public string Name
+        {
+            get;
+            set;
+        }
+    }
     
 }

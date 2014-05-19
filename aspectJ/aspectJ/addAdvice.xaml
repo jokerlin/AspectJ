@@ -10,17 +10,18 @@
 	<Grid x:Name="LayoutRoot">
 		<Rectangle Fill="#FF181818" Margin="8" RadiusY="6" RadiusX="6" Opacity="0.945"/>
 		<Label Content="添加 advice" HorizontalAlignment="Left" Height="25.657" Margin="8,8,0,0" VerticalAlignment="Top" Width="87" Foreground="Gray"/>
-		<RichTextBox x:Name="richTextBox" Margin="8,81,8,44.665" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9"  >
+		<RichTextBox x:Name="richTextBox" Margin="8,81,8,44.665" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9" Visibility="Hidden"  >
             <FlowDocument/>
         </RichTextBox>
 		<ComboBox x:Name="pointCutComboBox" Height="27.5" Style="{DynamicResource ComboBoxStyle1}" VerticalAlignment="Top" Foreground="#FFCDCDCD" Margin="76.013,38.322,171.654,0"/>
         <Label Content="选择切点" Height="28.165" Margin="16.013,37.657,0,0" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Left" Width="56" FontSize="10.667"/>
-		<ComboBox Height="27.5" Style="{DynamicResource ComboBoxStyle1}" VerticalAlignment="Top" Foreground="#FFCDCDCD" Margin="0,38.987,18.987,0" HorizontalAlignment="Right" Width="76.333">
+		<ComboBox x:Name="kindComboBox" Height="27.5" Style="{DynamicResource ComboBoxStyle1}" VerticalAlignment="Top" Foreground="#FFCDCDCD" Margin="0,38.987,18.987,0" HorizontalAlignment="Right" Width="76.333">
 			<ComboBoxItem Content="before" Style="{DynamicResource ComboBoxItemStyle1}"/>
 			<ComboBoxItem Content="after" Style="{DynamicResource ComboBoxItemStyle1}"/>
 		</ComboBox>
 		<Label Content="选择位置" Height="28.165" Margin="0,38.322,100.994,0" VerticalAlignment="Top" Foreground="White" FontSize="10.667" HorizontalAlignment="Right" Width="56"/>
 		<Button x:Name="acceptButton" Content="确定" Height="22.665" Margin="109.68,0,0,13" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" BorderBrush="#FF707070" HorizontalAlignment="Left" Width="79.333" Click="acceptButton_Click"/>
 		<Button x:Name="cancelButton" Content="取消" HorizontalAlignment="Right" Height="22.665" Margin="0,0,100.994,13" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" Width="79.333" Click="cancelButton_Click"/>
+		<TextBox x:Name="textBox" Margin="16.013,81,18.987,44.665" Style="{DynamicResource TextBoxStyle1}" TextWrapping="Wrap" Background="#FF282828" BorderBrush="#FF595959" Foreground="#FFBEBEBE"/>
 	</Grid>
 </Window>
