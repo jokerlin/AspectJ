@@ -11,8 +11,10 @@ namespace GenerateAspect
         private static string aspectCode;
         private static string pointcutCode;
         private static string adviceCode;
+        private static string AspectName;
 
         public static string GenerateAspectCode(List<string> pointcuts, List<string> advices, string aspectName) {
+            AspectName = aspectName;
             foreach (string pointcut in pointcuts)
             {
                 pointcutCode += pointcut;
@@ -21,8 +23,8 @@ namespace GenerateAspect
             {
                 adviceCode += advice;
             }
-            adviceCode = "public aspect " + aspectName + "() {\n\t" + pointcutCode + adviceCode + "}\n";
-            return adviceCode;
+            aspectCode = "public aspect " + aspectName + "() {\n\t" + pointcutCode + adviceCode + "}\n";
+            return aspectCode;
         }
     }
 }
