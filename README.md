@@ -3,8 +3,12 @@ AspectJ
 
 ##软件体系架构与设计模式大作业
 
-###备忘日志
-**Sat Apr 26 10:33:15 CST 2014**
+###添加的CompileAJ的类的使用方法
+CompileAJ compileAJ = new CompileAJ(filename);
+compileAJ.CompileAndRun();
+其中，filename为生成aj的文件名（不带后缀）
+
+###GetCalls的返回值
 GetCalls中的Run方法的返回值改为int型，0表示成功，-1表示异常，因此在返回-1的情况下需弹窗“读取配置文件失败”
 
 ###Pointcut参数表
