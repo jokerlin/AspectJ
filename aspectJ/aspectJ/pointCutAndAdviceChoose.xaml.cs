@@ -69,7 +69,7 @@ namespace aspectJ
             if (index == -1) return;
             FlowDocument doc = new FlowDocument();
             Paragraph p = new Paragraph();
-            Run r = new Run(Pointcuts.getPointCutCode(index));
+            Run r = new Run(Pointcuts.getPointcutName(index));
             p.Inlines.Add(r);
             doc.Blocks.Add(p);
             pointCutRichTextBox.Document = doc;

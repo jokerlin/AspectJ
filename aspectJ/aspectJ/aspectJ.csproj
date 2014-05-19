@@ -67,6 +67,7 @@
     <Compile Include="addPoint.xaml.cs">
       <DependentUpon>addPoint.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Advice.cs" />
     <Compile Include="Advices.cs" />
     <Compile Include="AnalyseFuction.cs" />
     <Compile Include="AspectGeneration.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="LoadingWindow.xaml.cs">
       <DependentUpon>LoadingWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pointcut.cs" />
     <Compile Include="pointCutAndAdviceChoose.xaml.cs">
       <DependentUpon>pointCutAndAdviceChoose.xaml</DependentUpon>
     </Compile>

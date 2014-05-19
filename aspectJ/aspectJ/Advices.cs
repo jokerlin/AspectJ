@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GenerateAspect
+namespace aspectJ
 {
     class Advices
     {
-        public static List<Advice> advices;
+        public static List<Advice> advices=new List<Advice>();
 
-        public void Advices()
-        {
-            advices = new List<Advice>();
-        }
+        //public void Advices()
+        //{
+        //    advices = new List<Advice>();
+        //}
         public static void AddAdvice(string AdviceKind, string pointcutName, string adviceCode)
         {
             Advice advice = new Advice();

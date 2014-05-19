@@ -5,16 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GenerateAspect
+namespace aspectJ
 {
     class Pointcuts
     {
-        public static List<Pointcut> pointcuts;
+        public static List<Pointcut> pointcuts=new List<Pointcut>();
         //public static List<string> pointcutNames;
 
-        public static void Pointcuts() {
-            pointcuts = new List<Pointcut>();
-        }
+        //public static void Pointcuts() {
+        //    pointcuts = new List<Pointcut>();
+        //}
         public static void AddPointcut(string returnValue, string pointcutName, string pointcutKind, string regex) {
             Pointcut newPointcut = new Pointcut();
             newPointcut.returnValue = returnValue;
