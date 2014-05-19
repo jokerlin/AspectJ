@@ -7,5 +7,8 @@ namespace aspectJ
 {
     class Advice
     {
+        public string adviceName;
+        public string adviceCode;
+        public string adviceString;
     }
 }
