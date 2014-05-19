@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 Z:\repos\AspectJ\aspectJ\aspectJ\App.xaml
-9-1186191712
+12434982278
 
-22-1153956240
+25-2054583422
 171399205524
-codeWindow.xaml;elementBox.xaml;FunctionChoose.xaml;LoadingWindow.xaml;MainWindow.xaml;ResourceDictionary.xaml;Simple Styles.xaml;theMainWindow.xaml;treeGraph.xaml;
+addAdvice.xaml;addPoint.xaml;codeWindow.xaml;elementBox.xaml;FunctionChoose.xaml;LoadingWindow.xaml;MainWindow.xaml;pointCutAndAdviceChoose.xaml;ResourceDictionary.xaml;Simple Styles.xaml;theMainWindow.xaml;treeGraph.xaml;
 
 False
 

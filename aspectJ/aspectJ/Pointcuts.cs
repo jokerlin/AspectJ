@@ -9,10 +9,15 @@ namespace GenerateAspect
     class Pointcuts
     {
         public static List<string> pointcuts;
+        public static List<string> pointcutNames;
 
+        public static void Pointcuts() {
+            pointcuts = new List<string>();
+            pointcutNames = new List<string>();
+        }
         public static void AddPointcut(string returnValue, string pointcutName, string pointcutKind, string regex) {
             string pointcutString = returnValue + " pointcut " + pointcutName + "(): " + pointcutKind + "(" + regex + ")\n";
-            pointcuts = new List<string>();
+            pointcutNames.Add(pointcutName);
             pointcuts.Add(pointcutString);
         }
         public static string getPointcuts(int index)
@@ -20,9 +25,19 @@ namespace GenerateAspect
             return pointcuts[index];
         }
 
+        public static string getPointcutName(int index)
+        {
+            return pointcutNames[index];
+        }
+
         public static void delPointcutByIndex(int index)
         {
             pointcuts.RemoveAt(index);
+        }
+
+        public static List<string> getPointcutNames()
+        {
+            return pointcutNames;
         }
     }
 }
