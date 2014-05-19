@@ -8,10 +8,10 @@ namespace GenerateAspect
 {
     class AspectGeneration
     {
-        private static string aspectCode;
+        public static string aspectCode;
         private static string pointcutCode;
         private static string adviceCode;
-        private static string AspectName;
+        public static string AspectName;
 
         public static string GenerateAspectCode(List<string> pointcuts, List<string> advices, string aspectName) {
             AspectName = aspectName;

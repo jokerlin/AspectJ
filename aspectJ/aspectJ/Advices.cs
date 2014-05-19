@@ -27,6 +27,14 @@ namespace GenerateAspect
 
         }
 
+        public static void EditAdvice(int index, string AdviceKind, string pointcutName, string adviceCode)
+        {
+            advices[index].adviceName = AdviceKind + " : " + pointcutName + "()";
+            advices[index].adviceCode = adviceCode;
+            string AdviceString = advices[index].adviceName + "{\n" + advices[index].adviceCode + "\n}\n";
+            advices[index].adviceString = AdviceString;
+        }
+
         public static Advice getAdvices(int index)
         {
             return advices[index];

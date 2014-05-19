@@ -24,6 +24,16 @@ namespace GenerateAspect
             string pointcutString = returnValue + " pointcut " + pointcutName + "(): " + pointcutKind + "(" + regex + ")\n";
             pointcuts.Add(newPointcut);
         }
+
+        public static void EditPointcut(int index, string returnValue, string pointcutName, string pointcutKind, string regex)
+        {
+            Pointcut newPointcut = new Pointcut();
+            newPointcut = pointcuts[index];
+            newPointcut.returnValue = returnValue;
+            newPointcut.pointcutName = pointcutName;
+            newPointcut.pointcutKind = pointcutKind;
+            newPointcut.regex = regex;
+        }
         public static Pointcut getPointcuts(int index)
         {
             return pointcuts[index];
