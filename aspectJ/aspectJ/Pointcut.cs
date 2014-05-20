@@ -11,5 +11,6 @@ namespace aspectJ
         public string pointcutName;
         public string pointcutKind;
         public string regex;
+        public string pointcutString;
     }
 }

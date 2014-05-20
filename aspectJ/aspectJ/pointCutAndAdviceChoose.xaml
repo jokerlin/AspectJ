@@ -21,7 +21,7 @@
 				<Grid Background="#FF3D3D3D" d:LayoutOverrides="VerticalMargin">
 					<Rectangle Fill="#FF3D3D3D" VerticalAlignment="Top" Margin="0,-0.5,0,0"/>
 					<ComboBox x:Name="pointCutComboBox" HorizontalAlignment="Left" Height="27.5" Style="{DynamicResource ComboBoxStyle1}" VerticalAlignment="Top" Width="228.333" Foreground="#FFCDCDCD" Margin="0,8,0,0" SelectionChanged="pointCutComboBox_SelectionChanged"/>
-					<RichTextBox x:Name="pointCutRichTextBox" Margin="0,39.5,0,0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9" TextChanged="richTextBox_TextChanged"  >
+					<RichTextBox x:Name="pointCutRichTextBox" IsReadOnly="True" Margin="0,39.5,0,0" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9" TextChanged="richTextBox_TextChanged"  >
                         <FlowDocument/>
                     </RichTextBox>
 					<Button x:Name="addButton" Content="添加" HorizontalAlignment="Right" Height="22.665" Margin="0,12.835,121.166,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55.333" Click="addButton_Click" />
@@ -36,7 +36,7 @@
                     </Grid.ColumnDefinitions>
 					<Rectangle Fill="#FF3D3D3D" VerticalAlignment="Top"/>
 					<ComboBox x:Name="adviceComboBox" HorizontalAlignment="Left" Height="28" Style="{DynamicResource ComboBoxStyle1}" VerticalAlignment="Top" Width="229" Foreground="#FFCDCDCD" Margin="0,8,0,0" SelectionChanged="adviceComboBox_SelectionChanged"/>
-					<RichTextBox x:Name="adviceRichTextBox" Margin="0,40,0,-1" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9"  >
+					<RichTextBox x:Name="adviceRichTextBox" IsReadOnly="True" Margin="0,40,0,-1" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle2}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9"  >
 						<FlowDocument/>
 					</RichTextBox>
 					<Button x:Name="addButton1" Content="添加" HorizontalAlignment="Right" Height="23" Margin="0,13,121,0" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Top" Width="55" Click="addButton1_Click" />

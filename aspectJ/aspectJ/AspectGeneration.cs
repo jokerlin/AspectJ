@@ -1,4 +1,5 @@
-﻿using System;
+﻿using aspectJ;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,15 +14,15 @@ namespace aspectJ
         private static string adviceCode;
         public static string AspectName;
 
-        public static string GenerateAspectCode(List<string> pointcuts, List<string> advices, string aspectName) {
+        public static string GenerateAspectCode(List<Pointcut> pointcuts, List<Advice> advices, string aspectName) {
             AspectName = aspectName;
-            foreach (string pointcut in pointcuts)
+            foreach (Pointcut pointcut in pointcuts)
             {
-                pointcutCode += pointcut;
+                pointcutCode += pointcut.pointcutString;
             }
-            foreach (string advice in advices)
+            foreach (Advice advice in advices)
             {
-                adviceCode += advice;
+                adviceCode += advice.adviceString;
             }
             aspectCode = "public aspect " + aspectName + "() {\n\t" + pointcutCode + adviceCode + "}\n";
             return aspectCode;

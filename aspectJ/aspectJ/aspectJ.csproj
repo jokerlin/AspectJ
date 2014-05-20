@@ -76,11 +76,15 @@
     <Compile Include="codeWindow.xaml.cs">
       <DependentUpon>codeWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CompileAJ.cs" />
     <Compile Include="FunctionChoose.xaml.cs">
       <DependentUpon>FunctionChoose.xaml</DependentUpon>
     </Compile>
     <Compile Include="GenerateAJFile.cs" />
-    <Compile Include="GetCalls.cs" />
+    <Compile Include="GetCalls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GetFlowDocument.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="InsertCodeCommand.cs" />
     <Compile Include="IUndoCommand.cs" />

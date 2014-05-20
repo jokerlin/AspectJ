@@ -12,7 +12,8 @@ namespace aspectJ
         public static FlowDocument getFlowDocument(string path)
         {
             FlowDocument flowDocument = new FlowDocument();
-            StreamReader srReadFile = new StreamReader(path);
+            
+            StreamReader srReadFile = new StreamReader(path,Encoding.GetEncoding("GBK") );
 
             while (!srReadFile.EndOfStream)
             {

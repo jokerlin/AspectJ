@@ -46,7 +46,7 @@ namespace aspectJ
         /// 读取ajcprofile.ini
         /// </summary>
         /// <returns></returns>
-        private string ReadAJCProFile()
+        public string ReadAJCProFile()
         {
             string strReadFilePath = @"ajcprofile.ini";
             StreamReader srReadFile = new StreamReader(strReadFilePath);
@@ -58,7 +58,7 @@ namespace aspectJ
         /// 读取javaprofile.ini
         /// </summary>
         /// <returns></returns>
-        private string ReadJavaProFile()
+        public string ReadJavaProFile()
         {
             string strReadFilePath = @"javaprofile.ini";
             StreamReader srReadFile = new StreamReader(strReadFilePath);
@@ -70,7 +70,7 @@ namespace aspectJ
         /// 读取projectprofile.ini
         /// </summary>
         /// <returns></returns>
-        private Tuple<string, string> ReadProjectFile()
+        public Tuple<string, string> ReadProjectFile()
         {
             string strReadFilePath = (@"projectfile.ini");
             StreamReader srReadFile = new StreamReader(strReadFilePath);
@@ -85,7 +85,7 @@ namespace aspectJ
         /// 生成bat文件
         /// </summary>
         /// <returns>0==>Success,-1==>Fail</returns>
-        private int WriteCompileFile()
+        public int WriteCompileFile()
         {
             string ins_ajc;
             string ins_java;
@@ -144,10 +144,10 @@ namespace aspectJ
         /// 执行bat
         /// </summary>
         /// <param name="command"></param>
-        private void RunCmd(string command)
+        public void RunCmd(string command)
         {
             ProcessStartInfo psi = new ProcessStartInfo("cmd.exe");
-            psi.CreateNoWindow = true;//不显示dos命令行窗口
+            psi.CreateNoWindow = false;//不显示dos命令行窗口
             psi.UseShellExecute = false;
             psi.RedirectStandardOutput = true;
             psi.RedirectStandardError = true;
@@ -165,7 +165,7 @@ namespace aspectJ
             //return results;
         }
 
-        private void Movefile(string sourceFile, string destinationFile)
+        public void Movefile(string sourceFile, string destinationFile)
         {
             try
             {

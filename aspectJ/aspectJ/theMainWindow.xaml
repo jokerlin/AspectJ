@@ -104,15 +104,14 @@
 				<DropShadowEffect/>
 			</Rectangle.Effect>
 		</Rectangle>
-		<Label Content="源码代码" HorizontalAlignment="Left" Height="28.165" Margin="205,48.835,0,0" VerticalAlignment="Top" Width="68" Foreground="White"/>
-		<TabControl HorizontalAlignment="Left" Margin="14.5,54.167,0,15.625" Width="172" Style="{DynamicResource TabControlStyle1}" Background="#FF595959" BorderBrush="{x:Null}">
+		<Label Content="源代码" HorizontalAlignment="Left" Height="28.165" Margin="205,48.835,0,0" VerticalAlignment="Top" Width="68" Foreground="White"/>
+		<TabControl HorizontalAlignment="Left" Margin="14,54,0,16" Width="181" Style="{DynamicResource TabControlStyle1}" Background="#FF595959" BorderBrush="{x:Null}">
 			<TabItem Header="源码列表" Style="{DynamicResource TabItemStyle1}" Foreground="#FFF0F0F0">
 				<Grid Background="#FFE5E5E5">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="0.17*"/>
-						<ColumnDefinition Width="0.83*"/>
-					</Grid.ColumnDefinitions>
-					<ListBox x:Name="srcList" Background="#FF282828" Grid.ColumnSpan="2"/>
+						<ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+					<ListBox x:Name="srcList" Background="#FFC5C5C5" Foreground="#FF1F1F1F" SelectionChanged="srcList_SelectionChanged"/>
                 </Grid>
 			</TabItem>
 			<TabItem Header="函数列表" Style="{DynamicResource TabItemStyle1}" Foreground="#FFF0F0F0" Visibility="Hidden">
@@ -142,7 +141,7 @@
 				</Grid>
 			</TabItem>
 		</TabControl>
-		<RichTextBox x:Name="richTextBox" Margin="206,77,17.253,15.625" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle3}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9"  >
+		<RichTextBox x:Name="richTextBox" IsReadOnly="True" Margin="206,77,17.253,15.625" Background="{x:Null}" BorderBrush="{x:Null}" VerticalScrollBarVisibility="Auto" Style="{DynamicResource RichTextBoxStyle3}" Foreground="#FFE9E9E9" CaretBrush="#FFE9E9E9"  >
             <FlowDocument>
             	<Paragraph/>
             </FlowDocument>
@@ -150,18 +149,6 @@
 		<TextBlock HorizontalAlignment="Left" Height="14.998" Margin="19.5,3.002,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100.667" Foreground="#FF3C3C3C"><Run Language="zh-cn" Text="AspectJ Editor"/></TextBlock>
 		<Button x:Name="closeButton" Content="X" HorizontalAlignment="Right" Height="19.333" Margin="0,0.918,11.022,0" Style="{DynamicResource ButtonStyle3}" VerticalAlignment="Top" Width="22.581" RenderTransformOrigin="0.166,0.3" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3C3C" FontSize="14.667" Focusable="False" Click="closeButton_Click"/>
 		<Button Content="━" HorizontalAlignment="Right" Height="19.333" Margin="0,0.918,35.67,0" Style="{DynamicResource ButtonStyle3}" VerticalAlignment="Top" Width="22.581" RenderTransformOrigin="0.166,0.3" FontWeight="Bold" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF3C3C3C" FontSize="14.667" Focusable="False"/>
-        <ToolBar HorizontalAlignment="Left" Margin="278,46,0,0" VerticalAlignment="Top" Height="31" Width="226" Background="{x:Null}" Style="{DynamicResource ToolBarStyle1}">
-            <Button x:Name="undoButton" Command="Undo"  Content="" HorizontalAlignment="Left" Height="25" Style="{DynamicResource undoButtonStyle}" VerticalAlignment="Top" Width="27" BorderBrush="{x:Null}" Focusable="False">
-                <Button.Background>
-                    <ImageBrush ImageSource="images/undoButton.png"/>
-                </Button.Background>
-            </Button>
-            <Button x:Name="redo" Command="Redo" Content="" HorizontalAlignment="Left" Height="25" Style="{DynamicResource redoButtonStyle}" VerticalAlignment="Top" Width="27" BorderBrush="{x:Null}" Focusable="False" RenderTransformOrigin="2.53,0.276">
-                <Button.Background>
-                    <ImageBrush ImageSource="images/redoButtonDisable.png"/>
-                </Button.Background>
-            </Button>
-        </ToolBar>
     </Grid>
 </Window>
     

@@ -212,7 +212,9 @@ namespace aspectJ
 
         private void generateButton_Click(object sender, RoutedEventArgs e)
         {
-            //AspectGeneration.GenerateAspectCode(Pointcuts.pointcuts,
+            AspectGeneration.GenerateAspectCode(Pointcuts.pointcuts, Advices.advices, nameTextBox.Text);
+            GenerateAJFile.generateAJFile();
+            MessageBox.Show("aspectJ代码自动生成成功");
         }
         
 	}

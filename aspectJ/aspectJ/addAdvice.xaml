@@ -5,7 +5,7 @@
 	x:Class="aspectJ.addAdvice"
 	x:Name="Window"
 	Title="addAdvice"
-	Width="446" Height="318" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" WindowStartupLocation="CenterOwner">
+	Width="446" Height="334" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}" WindowStartupLocation="CenterOwner">
 
 	<Grid x:Name="LayoutRoot">
 		<Rectangle Fill="#FF181818" Margin="8" RadiusY="6" RadiusX="6" Opacity="0.945"/>
@@ -22,6 +22,18 @@
 		<Label Content="选择位置" Height="28.165" Margin="0,38.322,100.994,0" VerticalAlignment="Top" Foreground="White" FontSize="10.667" HorizontalAlignment="Right" Width="56"/>
 		<Button x:Name="acceptButton" Content="确定" Height="22.665" Margin="109.68,0,0,13" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" BorderBrush="#FF707070" HorizontalAlignment="Left" Width="79.333" Click="acceptButton_Click"/>
 		<Button x:Name="cancelButton" Content="取消" HorizontalAlignment="Right" Height="22.665" Margin="0,0,100.994,13" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" Width="79.333" Click="cancelButton_Click"/>
-		<TextBox x:Name="textBox" Margin="16.013,81,18.987,44.665" Style="{DynamicResource TextBoxStyle1}" TextWrapping="Wrap" Background="#FF282828" BorderBrush="#FF595959" Foreground="#FFBEBEBE"/>
+		<TextBox x:Name="textBox"  AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Margin="16.013,103,10.154,44.665" Style="{DynamicResource TextBoxStyle1}" TextWrapping="Wrap" Background="#FF282828" BorderBrush="#FF595959" Foreground="#FFBEBEBE"/>
+		<ToolBar HorizontalAlignment="Left" Margin="365,70.487,0,0" VerticalAlignment="Top" Height="31" Width="81" Background="{x:Null}" Style="{DynamicResource ToolBarStyle1}">
+			<Button x:Name="undoButton" Command="Undo"  Content="" HorizontalAlignment="Left" Height="25" Style="{DynamicResource undoButtonStyle}" VerticalAlignment="Top" Width="27" BorderBrush="{x:Null}" Focusable="False">
+				<Button.Background>
+					<ImageBrush ImageSource="images/undoButton.png"/>
+				</Button.Background>
+			</Button>
+			<Button x:Name="redo" Command="Redo" Content="" HorizontalAlignment="Left" Height="25" Style="{DynamicResource redoButtonStyle}" VerticalAlignment="Top" Width="27" BorderBrush="{x:Null}" Focusable="False" RenderTransformOrigin="2.53,0.276">
+				<Button.Background>
+					<ImageBrush ImageSource="images/redoButtonDisable.png"/>
+				</Button.Background>
+			</Button>
+		</ToolBar>
 	</Grid>
 </Window>

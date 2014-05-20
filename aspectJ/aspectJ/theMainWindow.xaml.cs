@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Forms;
 using System.Threading;
+using System.Collections.ObjectModel;
 namespace aspectJ
 {
 	/// <summary>
@@ -19,14 +20,18 @@ namespace aspectJ
 	public partial class theMainWindow : Window
 	{
         public CodeManager codemanager;
+        ObservableCollection<MyFileInfo> fileList=new ObservableCollection<MyFileInfo>();
         CodeEditor codeEditor;
 		public theMainWindow()
 		{
 			this.InitializeComponent();
-            undoButton.Command = System.Windows.Input.ApplicationCommands.Undo;
-            undoButton.IsEnabled = true;
+            //undoButton.Command = System.Windows.Input.ApplicationCommands.Undo;
+            //undoButton.IsEnabled = true;
             codemanager = new CodeManager();
             codeEditor = new CodeEditor();
+            this.srcList.ItemsSource = fileList;
+            this.srcList.DisplayMemberPath = "Name";
+            this.srcList.SelectedValuePath = "ID";
 			// 在此点之下插入创建对象所需的代码。
             
            
@@ -81,15 +86,16 @@ namespace aspectJ
 
             string folderName = folderBrowserDialog.SelectedPath;
             Program.functionlist(folderName);
-            for (int i = 0; i < Program.fl.Count; i++)
-            {
-               // ResourceDictionary resourceDictionary = new ResourceDictionary();
-                //resourceDictionary.Source=new Uri("
-                ListBoxItem lbi = new ListBoxItem() { Content = Program.fl[i], Style = Resources["ListBoxItemStyle2"] as Style};
-                srcList.Items.Add(lbi);
+            updata();
+            //for (int i = 0; i < Program.fl.Count; i++)
+            //{
+            //   // ResourceDictionary resourceDictionary = new ResourceDictionary();
+            //    //resourceDictionary.Source=new Uri("
+            //    ListBoxItem lbi = new ListBoxItem() { Content = Program.fl[i].Name, Style = Resources["ListBoxItemStyle2"] as Style};
+            //    srcList.Items.Add(lbi);
                 
                 
-            }
+            //}
         }
 
         private void cutOpenButton_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -101,7 +107,53 @@ namespace aspectJ
 
         private void doButton_Click(object sender, RoutedEventArgs e)
         {
+            CompileAJ compileAj = new CompileAJ(AspectGeneration.AspectName);
+            compileAj.CompileAndRun();
+            
             //GenerateAJFile.generateAJFile();
         }
+
+        public void updata()
+        {
+            fileList.Clear();
+            for (int i = 0; i < Program.fl.Count; i++)
+            {
+                MyFileInfo mfi = new MyFileInfo();
+                mfi.ID = i;
+                mfi.Name = Program.fl[i].Name;
+                mfi.fileName = Program.fl[i].FullName;
+                fileList.Add(mfi);
+            }
+        }
+
+        private void srcList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MyFileInfo mfi=new MyFileInfo();
+            mfi = (MyFileInfo)srcList.SelectedItem;
+            FlowDocument doc = new FlowDocument();
+            doc = GetFlowDocument.getFlowDocument(mfi.fileName);
+            richTextBox.Document = doc;
+        }
 	}
+
+    public class MyFileInfo
+    {
+        public int ID
+        {
+            get;
+            set;
+        }
+
+        public string Name
+        {
+            get;
+            set;
+        }
+
+        public string fileName
+        {
+            get;
+            set;
+        }
+    }
 }
