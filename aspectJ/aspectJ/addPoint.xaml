@@ -24,12 +24,12 @@
 		<Button x:Name="acceptButton" Content="确定" Height="22.665" Margin="110.68,0,0,13.012" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" BorderBrush="#FF707070" HorizontalAlignment="Left" Width="79.333" Click="acceptButton_Click"/>
 		<Button x:Name="cancelButton" Content="取消" HorizontalAlignment="Right" Height="22.665" Margin="0,0,99.994,13.012" Style="{DynamicResource TextButtonStyle}" VerticalAlignment="Bottom" Width="79.333" Click="cancelButton_Click"/>
 		<ComboBox x:Name="pointCutKindCombox" Margin="0,86.234,21.327,108.266" Style="{DynamicResource ComboBoxStyle1}" Foreground="#FFE9E9E9" HorizontalAlignment="Right" Width="146">
-			<ComboBoxItem Content="Call" Style="{DynamicResource ComboBoxItemStyle1}"/>
-			<ComboBoxItem Content="Execution" Style="{DynamicResource ComboBoxItemStyle1}"/>
-			<ComboBoxItem Content="Target" Style="{DynamicResource ComboBoxItemStyle1}"/>
-			<ComboBoxItem Content="Args" Style="{DynamicResource ComboBoxItemStyle1}"/>
-			<ComboBoxItem Content="Within" Style="{DynamicResource ComboBoxItemStyle1}"/>
-			<ComboBoxItem Content="Cflow" Style="{DynamicResource ComboBoxItemStyle1}"/>
+			<ComboBoxItem Content="call" Style="{DynamicResource ComboBoxItemStyle1}"/>
+			<ComboBoxItem Content="execution" Style="{DynamicResource ComboBoxItemStyle1}"/>
+			<ComboBoxItem Content="target" Style="{DynamicResource ComboBoxItemStyle1}"/>
+			<ComboBoxItem Content="args" Style="{DynamicResource ComboBoxItemStyle1}"/>
+			<ComboBoxItem Content="within" Style="{DynamicResource ComboBoxItemStyle1}"/>
+			<ComboBoxItem Content="cflow" Style="{DynamicResource ComboBoxItemStyle1}"/>
 		</ComboBox>
 	</Grid>
 </Window>

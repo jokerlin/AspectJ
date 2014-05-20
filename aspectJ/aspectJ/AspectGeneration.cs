@@ -24,7 +24,7 @@ namespace aspectJ
             {
                 adviceCode += advice.adviceString;
             }
-            aspectCode = "public aspect " + aspectName + "() {\n\t" + pointcutCode + adviceCode + "}\n";
+            aspectCode = "public aspect " + aspectName + " {\n\t" + pointcutCode + adviceCode + "}\n";
             return aspectCode;
         }
     }

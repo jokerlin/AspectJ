@@ -18,8 +18,8 @@
     			<DropShadowEffect/>
     		</Rectangle.Effect>
     	</Rectangle>
-    	<ScrollViewer x:Name="scrollViewer" Margin="24.172,21.5,2.508,15" VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Auto" Style="{DynamicResource canvasScrollViewerStyle}" >
-    		<local:DrawingCanvas x:Name="drawingSurface" ClipToBounds="True" MouseLeftButtonDown="drawingSurface_MouseLeftButtonDown" MouseRightButtonDown="drawingSurface_MouseRightButtonDown"  />
+    	<ScrollViewer x:Name="scrollViewer" Margin="24.172,21.5,2.508,15" VerticalScrollBarVisibility="Auto"  HorizontalScrollBarVisibility="Auto" Style="{DynamicResource canvasScrollViewerStyle}" Width="883.987" Height="603.5" >
+    		<local:DrawingCanvas x:Name="drawingSurface" ClipToBounds="True" MouseLeftButtonDown="drawingSurface_MouseLeftButtonDown" MouseRightButtonDown="drawingSurface_MouseRightButtonDown" Width="868" Height="588"  />
     	</ScrollViewer>
     	<Grid HorizontalAlignment="Right" Margin="0,7.75,-44.826,0" VerticalAlignment="Top">
     		<Rectangle Fill="#FF454545" RadiusY="7.674" RadiusX="7.674" Margin="0,0.25,2.667,0" Height="40.333" VerticalAlignment="Top" Stroke="#FF878787"/>

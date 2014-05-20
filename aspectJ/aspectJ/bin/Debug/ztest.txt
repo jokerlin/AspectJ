@@ -1,0 +1,6 @@
+Speaker.main 1
+Speaker.speak 1
+Speaker.speak 0
+Speaker.sleep 1
+Speaker.eat 1
+

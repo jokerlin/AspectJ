@@ -1,120 +1,1014 @@
-		Main mainFunction 1
-			Draw drawGraph 1
-				Draw drawText 1
-					Draw chooseBrush 1
-            			Draw drawGraph 1
-							Draw drawText 1
-								Draw chooseBrush 1
-								Draw chooseBrush 0
-								Draw chooseFont 1
-								Draw chooseFont 0
-							Draw drawText 0
-							Draw drawRectange 1
-								Draw drawLine 1
-									Draw choosePen 1
-										Draw drawGraph 1
-											Draw drawText 1
-												Draw chooseBrush 1
-												Draw chooseBrush 0
-												Draw chooseFont 1
-												Draw chooseFont 0
-											Draw drawText 0
-											Draw drawRectange 1
-												Draw drawLine 1
-													Draw choosePen 1
-													Draw choosePen 0
-												Draw drawLine 0
-												Draw drawBorder 1
-												Draw drawBorder 0
-												Draw fillColor 1
-													Draw chooseBrush 1
-													Draw chooseBrush 0
-												Draw fillColor 0
-											Draw drawRectange 0
-										Draw drawGraph 0
-									Draw choosePen 0
-								Draw drawLine 0
-								Draw drawBorder 1
-								Draw drawBorder 0
-								Draw fillColor 1
-									Draw chooseBrush 1
-									Draw chooseBrush 0
-								Draw fillColor 0
-							Draw drawRectange 0
-						Draw drawGraph 0
-					Draw chooseBrush 0
-					Draw chooseFont 1
-					Draw chooseFont 0
-				Draw drawText 0
-				Draw drawRectange 1
-					Draw drawLine 1
-						Draw choosePen 1
-						Draw choosePen 0
-					Draw drawLine 0
-					Draw drawBorder 1
-					Draw drawBorder 0
-					Draw fillColor 1
-						Draw chooseBrush 1
-						Draw chooseBrush 0
-					Draw fillColor 0
-				Draw drawRectange 0
-			Draw drawGraph 0
-
-            Draw drawRectange 1
-				Draw drawLine 1
-					Draw choosePen 1
-					Draw choosePen 0
-				Draw drawLine 0
-				Draw drawBorder 1
-				Draw drawBorder 0
-				Draw fillColor 1
-					Draw chooseBrush 1
-					Draw chooseBrush 0
-				Draw fillColor 0
-            Draw drawRectange 0
-
-
-            Draw chooseBrush 1
-				Draw drawGraph 1
-					Draw drawText 1
-						Draw chooseBrush 1
-						Draw chooseBrush 0
-						Draw chooseFont 1
-						Draw chooseFont 0
-					Draw drawText 0
-					Draw drawRectange 1
-						Draw drawLine 1
-							Draw choosePen 1
-								Draw drawGraph 1
-									Draw drawText 1
-										Draw chooseBrush 1
-										Draw chooseBrush 0
-										Draw chooseFont 1
-										Draw chooseFont 0
-									Draw drawText 0
-									Draw drawRectange 1
-										Draw drawLine 1
-											Draw choosePen 1
-            								Draw choosePen 0
-										Draw drawLine 0
-										Draw drawBorder 1
-										Draw drawBorder 0
-										Draw fillColor 1
-											Draw chooseBrush 1
-											Draw chooseBrush 0
-										Draw fillColor 0
-									Draw drawRectange 0
-								Draw drawGraph 0
-							Draw choosePen 0
-						Draw drawLine 0
-						Draw drawBorder 1
-						Draw drawBorder 0
-						Draw fillColor 1
-							Draw chooseBrush 1
-							Draw chooseBrush 0
-						Draw fillColor 0
-					Draw drawRectange 0
-				Draw drawGraph 0
-			Draw chooseBrush 0
-
-        Main mainFunction 0
+AwtMainComponet.main 1
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.setGaming 1
+GamingInfo.setGaming 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.setScreenWidth 1
+GamingInfo.setScreenWidth 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.setScreenHeight 1
+GamingInfo.setScreenHeight 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.getScreenWidth 1
+GamingInfo.getScreenWidth 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.getScreenHeight 1
+GamingInfo.getScreenHeight 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.getScreenWidth 1
+GamingInfo.getScreenWidth 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.getScreenHeight 1
+GamingInfo.getScreenHeight 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.getScreenWidth 1
+GamingInfo.getScreenWidth 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.getScreenHeight 1
+GamingInfo.getScreenHeight 0
+MainSurface$JCanvas.getPaint 1
+MainSurface$JCanvas.getPaint 0
+MainSurface$JCanvas$JPaint.setAntiAlias 1
+MainSurface$JCanvas$JPaint.setAntiAlias 0
+MainSurface$JCanvas$JPaint.setDither 1
+MainSurface$JCanvas$JPaint.setDither 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.setSurface 1
+GamingInfo.setSurface 0
+MainSurface.action 1
+MainSurface.action 0
+AwtMainComponet.main 0
+MainSurface.paint 1
+MainSurface$JCanvas.getCanvas 1
+MainSurface$JCanvas.getCanvas 0
+MainSurface$OnDrawThread.run 1
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.isGaming 1
+GamingInfo.isGaming 0
+AwtMainComponet$2.run 1
+GameInitManager.getGameInitManager 1
+GameInitManager.getGameInitManager 0
+GameInitManager.init 1
+ImageManager.getImageMnagaer 1
+ImageManager.getImageMnagaer 0
+ImageManager.initManager 1
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.getScreenHeight 1
+GamingInfo.getScreenHeight 0
+ImageManager.initManager 0
+GameInitManager.initProgress 1
+LoadProgress.getLoadProgress 1
+ImageManager.getImageMnagaer 1
+ImageManager.getImageMnagaer 0
+ImageManager.getBitmapByAssets 1
+ImageManager.getBitmapByAssets 0
+ImageManager.getImageMnagaer 1
+ImageManager.getImageMnagaer 0
+ImageManager.getBitmapByAssets 1
+ImageManager.getBitmapByAssets 0
+ImageManager.getImageMnagaer 1
+ImageManager.getImageMnagaer 0
+ImageManager.getImageMnagaer 1
+ImageManager.getImageMnagaer 0
+ImageManager.getBitmapByAssets 1
+ImageManager.getBitmapByAssets 0
+MainSurface.paint 1
+MainSurface$JCanvas.getCanvas 1
+MainSurface$JCanvas.getCanvas 0
+MainSurface.paint 0
+AwtMainComponet$1.mouseEntered 1
+AwtMainComponet$1.mouseEntered 0
+MainSurface.paint 1
+MainSurface$JCanvas.getCanvas 1
+MainSurface$JCanvas.getCanvas 0
+MainSurface.paint 0
+MainSurface.lockCanvas 1
+MainSurface.lockCanvas 0
+MainSurface.onDraw 1
+MainSurface.updatePicLayer 1
+MainSurface.updatePicLayer 0
+MainSurface.onDraw 0
+MainSurface.unlockCanvasAndPost 1
+MainSurface.unlockCanvasAndPost 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.isGaming 1
+GamingInfo.isGaming 0
+MainSurface.lockCanvas 1
+MainSurface.lockCanvas 0
+MainSurface.onDraw 1
+MainSurface.updatePicLayer 1
+MainSurface.updatePicLayer 0
+MainSurface.onDraw 0
+MainSurface.unlockCanvasAndPost 1
+MainSurface.unlockCanvasAndPost 0
+LoadProgress.getLoadProgress 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.getScreenWidth 1
+GamingInfo.getScreenWidth 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.getScreenHeight 1
+GamingInfo.getScreenHeight 0
+ImageManager.sacleImageByWidthAndHeight 1
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getImage 1
+Bitmap.getImage 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.isGaming 1
+GamingInfo.isGaming 0
+MainSurface.lockCanvas 1
+MainSurface.lockCanvas 0
+MainSurface.onDraw 1
+MainSurface.updatePicLayer 1
+MainSurface.updatePicLayer 0
+MainSurface.onDraw 0
+MainSurface.unlockCanvasAndPost 1
+MainSurface.unlockCanvasAndPost 0
+ImageManager.sacleImageByWidthAndHeight 0
+LoadProgress.setProgress 1
+Bitmap.copy 1
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.copy 0
+Bitmap.getImage 1
+Bitmap.getImage 0
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.copy 1
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.copy 0
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+GamingInfo.getGamingInfo 1
+GamingInfo.getGamingInfo 0
+GamingInfo.isGaming 1
+GamingInfo.isGaming 0
+MainSurface.lockCanvas 1
+MainSurface.lockCanvas 0
+MainSurface.onDraw 1
+MainSurface.updatePicLayer 1
+MainSurface.updatePicLayer 0
+MainSurface.onDraw 0
+MainSurface.unlockCanvasAndPost 1
+MainSurface.unlockCanvasAndPost 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.getWidth 1
+Bitmap.getWidth 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0
+Bitmap.setPixel 1
+Bitmap.setPixel 0
+Bitmap.getHeight 1
+Bitmap.getHeight 0

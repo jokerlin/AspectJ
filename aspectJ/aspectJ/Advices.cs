@@ -18,7 +18,7 @@ namespace aspectJ
         public static void AddAdvice(string AdviceKind, string pointcutName, string adviceCode)
         {
             Advice advice = new Advice();
-            advice.adviceName = AdviceKind + " : " + pointcutName + "()";
+            advice.adviceName = AdviceKind + " (): " + pointcutName + "()";
             advice.adviceCode = adviceCode;
             advice.advicePointcutKind = AdviceKind;
             advice.advicePointcutName = pointcutName;
@@ -31,7 +31,7 @@ namespace aspectJ
 
         public static void EditAdvice(int index, string AdviceKind, string pointcutName, string adviceCode)
         {
-            advices[index].adviceName = AdviceKind + " : " + pointcutName + "()";
+            advices[index].adviceName = AdviceKind + "() : " + pointcutName + "()";
             advices[index].adviceCode = adviceCode;
             advices[index].advicePointcutKind = AdviceKind;
             advices[index].advicePointcutName = pointcutName;

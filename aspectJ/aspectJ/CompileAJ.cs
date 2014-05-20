@@ -14,6 +14,7 @@ namespace aspectJ
         public CompileAJ(string filename)
         {
             this.filename = filename + ".aj";
+           // filename = "HelloAspect.aj";
         }
 
         public int CompileAndRun()
@@ -49,7 +50,7 @@ namespace aspectJ
 
                 ins_ajc = @"ajc -1.7 -classpath " + classpath + @"\lib\aspectjrt.jar """ + projectpath + @"\*.aj"" """ + projectpath + @"\*.java""";
                 //string ins_java = "\"" + path + "\\java.exe\"  -classpath " + classpath + @"\lib\aspectjrt.jar;""" + projectpath + @"\"" " + projectMain;
-                ins_java = "\"" + path + "\\java.exe\"  -classpath " + classpath + @"\lib\aspectjrt.jar;""" + projectpath + @""" " + projectMain;
+                ins_java = "\"" + path + "\\java.exe\"  -classpath " + classpath + @"\lib\aspectjrt.jar;""" + projectpath + @""" " + projectMain + " > log.txt";
 
                 string strWriteFilePath = (@"compile.bat");
                 StreamWriter srWriteFile = new StreamWriter(strWriteFilePath);
