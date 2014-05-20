@@ -31,7 +31,6 @@ namespace aspectJ
             {
                 return -1;
             }
-            
             return 0;
         }
         public int WriteCompileFile()

@@ -165,7 +165,7 @@ namespace aspectJ
         public void RunCmd(string command)
         {
             ProcessStartInfo psi = new ProcessStartInfo("cmd.exe");
-            psi.CreateNoWindow = false;//不显示dos命令行窗口
+            psi.CreateNoWindow = true;//不显示dos命令行窗口
             psi.UseShellExecute = false;
             psi.RedirectStandardOutput = true;
             psi.RedirectStandardError = true;
