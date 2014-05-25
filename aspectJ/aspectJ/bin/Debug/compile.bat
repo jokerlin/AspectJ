@@ -1,3 +1,3 @@
 C:
-cd C:\javatest
-ajc -1.7 -classpath C:\aspectj1.7\lib\aspectjrt.jar "C:\javatest\*.aj" "C:\javatest\*.java"
+cd C:\FishGame
+ajc -d tmp @sources.list -cp "lib\dom4j-1.6.1.jar;lib\kxml2.jar;lib\xmlpull_1_1_3_4c.jar;lib\jl1.0.jar;lib\jogg-0.0.7.jar;lib\jorbis-0.0.15.jar;lib\mp3spi1.9.4.jar;lib\tritonus_jorbis-0.3.6.jar;lib\tritonus_share.jar;C:\aspectj1.7\lib\aspectjrt.jar" -1.7

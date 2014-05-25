@@ -148,7 +148,6 @@ D:\wpf\aspectj\AspectJ2\aspectJ\aspectJ\bin\Debug\zh-Hant\System.Windows.Interac
 D:\wpf\aspectj\AspectJ2\aspectJ\aspectJ\obj\Debug\pointCutAndAdviceChoose.baml
 D:\wpf\aspectj\AspectJ2\aspectJ\aspectJ\obj\Debug\treeGraph.baml
 D:\wpf\aspectj\AspectJ2\aspectJ\aspectJ\obj\Debug\aspectJ.g.resources
-D:\wpf\aspectj\AspectJ\aspectJ\aspectJ\obj\Debug\aspectJ.csprojResolveAssemblyReference.cache
 D:\wpf\aspectj\AspectJ\aspectJ\aspectJ\obj\Debug\addPoint.baml
 D:\wpf\aspectj\AspectJ\aspectJ\aspectJ\obj\Debug\codeWindow.baml
 D:\wpf\aspectj\AspectJ\aspectJ\aspectJ\obj\Debug\elementBox.baml

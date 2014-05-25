@@ -30,7 +30,16 @@ namespace aspectJ
         public treeGraph()
         {
             InitializeComponent();
-            AnalyseFuction af = new AnalyseFuction("./calls.txt");
+            AnalyseFuction af;
+            if (Program.curFileNamepath == "C:\\FishGame")
+            {
+               af = new AnalyseFuction("./test.txt");
+            }
+            else
+            {
+               af = new AnalyseFuction("./calls.txt");
+            }
+            
             af.readFile();
             pieces = af.getPieceList();
 

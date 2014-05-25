@@ -1,6 +1,6 @@
 public aspect HelloAspect {
 	public pointcut allMethods(): execution(* * (..));
 before (): allMethods(){
-System.out.println("lalalalal...");
+System.out.println("blabla..");
 }
 }

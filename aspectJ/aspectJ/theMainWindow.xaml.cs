@@ -109,7 +109,7 @@ namespace aspectJ
         {
             CompileAJ compileAj = new CompileAJ(AspectGeneration.AspectName);
             compileAj.CompileAndRun();
-            
+            System.Windows.MessageBox.Show("编译执行完毕");
             //GenerateAJFile.generateAJFile();
         }
 

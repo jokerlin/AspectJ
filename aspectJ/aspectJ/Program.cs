@@ -11,6 +11,7 @@ namespace aspectJ
     {
         public static List<FileInfo> fl = new List<FileInfo>();    //文件列表
         public static FileInfo mainfile;     //main函数所在文件
+        public static string curFileNamepath;
 
         //搜索是否含有main函数
         private static bool HasMain(FileInfo file)
@@ -52,6 +53,8 @@ namespace aspectJ
         public static void functionlist(string path)
         {
             //将文件目录写入配置文件
+            fl.Clear();
+            curFileNamepath = path;
             FileStream fi = new FileStream("projectfile.ini", FileMode.OpenOrCreate);//改动过
             StreamWriter sw = new StreamWriter(fi);
             sw.WriteLine(path);
